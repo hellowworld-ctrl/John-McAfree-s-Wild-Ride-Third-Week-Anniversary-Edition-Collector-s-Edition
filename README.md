@@ -2,7 +2,7 @@
 
 Roles:
 Volodymyr Surin - Project Leader
-Gianni Bellucci - DJ Bridges / Cyber Warrior
+Gianni Bellucci - DJ Bridges / Cyber Warrior/ Screenwriter
 Timothy Sokoloff - Spiderman/Spiderwoman
 Jacob Peters - Inheritor of Suffering
 John Brereton - ISAD
