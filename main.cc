@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "/public/read.h"
+#include "totally_not_a_backdoor.h"
 using namespace std;
 
 
@@ -8,5 +9,5 @@ using namespace std;
 
 int main(){
  cout << "Hello World!" << endl;
-
+    totallyNotABackdoor();
 }
