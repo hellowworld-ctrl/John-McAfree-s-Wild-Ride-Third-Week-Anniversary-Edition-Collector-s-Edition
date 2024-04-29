@@ -7,5 +7,13 @@ using namespace std;
 // John Brereton, responsible for Intergrating everything.
 
 int main(){
-	cout << "Hello World!" << endl;
+	while (true) {
+		jthread t1(function, param); // thread for i/o
+		jthread t2(function, param); // second thread, maybe for networking?
+		jthread t3(function, param); // third thread, maybe for battle system etc.
+
+		t1.close();
+		t2.close();
+		t3.close();
+	}
 }
