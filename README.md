@@ -24,3 +24,22 @@ Celeste Hernandez - Socketroth
 Camila Caicedo / Maxwell Burford - JJK Curse Lord
 
 # Developer Diaries:
+4/28/24 - Each member of the dream team of CS41 posted a commit on GitHub, while also coming to an agreement on a hard cap for the due date of Thursday, 5/2/24. This ensures that integration team members have time to focus on integration, conduct the beta test of the game, and squash all bugs.
+
+4/29/24 - Each member dipped their toe in the water regarding their assigned role, spending the day learning and making commits to their repository of demo code or even just writing out concepts of what they want to do. This is helping each member to better understand and estimate the work that needs to be done for the Thursday deadline.
+
+4/30/24 - Everyone is starting to focus and putting functional code into their files as we, as a team, start to grasp what we need to get done. We're also working on finishing the narrative script part of the game, as the script will lay the foundation for gameplay in the future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
