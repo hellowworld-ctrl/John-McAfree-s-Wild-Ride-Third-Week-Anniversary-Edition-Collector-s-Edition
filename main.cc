@@ -6,14 +6,23 @@ using namespace std;
 
 // John Brereton, responsible for Intergrating everything.
 
+// Not completely sure how this will work yet
+// Maybe the function will recieve input from the client, pass it to the server, and output what the server sends back
+void ioFunction(char input) {
+	static mutex io_mutex;
+	lock_guard lock(io_mutex);
+
+	string output = "";
+	if (input == 'W') {}
+	else if (input == 'A') {}
+	//.....
+	cout << output << endl;
+}
+
 int main(){
 	while (true) {
-		jthread t1(function, param); // thread for i/o
-		jthread t2(function, param); // second thread, maybe for networking?
-		jthread t3(function, param); // third thread, maybe for battle system etc.
+		jthread t1(ioFunction, param); // thread for i/o
 
-		t1.close();
-		t2.close();
-		t3.close();
+		t1.join();
 	}
 }
