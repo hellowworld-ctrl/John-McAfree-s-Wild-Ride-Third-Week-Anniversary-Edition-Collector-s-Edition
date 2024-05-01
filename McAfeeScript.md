@@ -20,10 +20,9 @@
 - Hilary Clinton 
 
 
-He lies comfortably by the poolside, one hand stroking the chin of his lover, and the other massaging the cold steel of his Smith & Wesson revolver. Belizean heat scorches his patchy blond hair and kisses the woefully tanned tribal tattoos on both shoulders. A mind once preoccupied with malware prevention and proprietary software now faces the incessant jitters of death or, even worse, jail time. He is surrounded by a sort of impromptu paramilitary, whose faces speak of blind loyalty. 
+He lies comfortably by the poolside. One hand strokes the chin of his lover, the other massages the cold steel of a Smith & Wesson revolver. Belizean heat scorches his patchy blond hair and kisses the woefully tanned tribal tattoos on both of his shoulders. A mind once preoccupied with malware prevention and proprietary software now faces the incessant jitters of death or, even worse, jail time. He is surrounded by a sort of impromptu paramilitary, whose faces speak of blind loyalty. 
 
-
-John McAfee:  a senior-aged mastermind in the art of evasion. He now assumes the role of virus, with few escapes remaining on an ever dwindling horizon. By this point, he has laid sovereignty on his small coastal abode in Ambergris Cave, enforcing curfews on the town’s helpless citizens. In true libertarian ethos, McAfee lies paranoid in a home devoid of a single tax document, contemplating a method of escape. Miami appears promising. 
+John McAfee: a senior-aged mastermind in the art of evasion. He now assumes the role of virus, with few escapes remaining on an ever dwindling horizon. By this point, he has laid sovereignty on his small coastal abode in Ambergris Cave, enforcing curfews on the town’s helpless citizens. In true libertarian ethos, McAfee lies paranoid in a home devoid of a single tax document, contemplating a method of escape. Miami appears promising. 
 
 “The airport - sounds like the only way out of here” McAfee’s little militant says. 
 
@@ -31,9 +30,41 @@ John McAfee:  a senior-aged mastermind in the art of evasion. He now assumes the
 
 “I’m scared, Johnny.” mutters his underaged girlfriend. 
 
-“Why?” 
+“Why, darling?” John asks. 
+
+"We've been here for months and they haven't even caught what we've been doing with the town. Everyone's a prisoner - I can only imagine what they'll bring out to fight us." 
+
+"She's got a point, John. I've been going up and down these streets for a months maintaing the curfew. Chances are, some brave soul reported us to greather authorities." inquires the taller militant. 
+
+"I don't give a shit. There's not a single international contigency that can do anything about us. We're everywhere, we're decentralized, we're not even real - think like crypto. Does crypto have any intrinstic exchange value? Fuck no! I peddle it on my Twitter timeline because it's funny - it's just an append-only data structure. It's like walking around with a wallet that gets bigger or smaller depending on vibes." John rants longingly. 
+
+"This is the second time you've said this this afternoon, sitting in that chair, drinking that cocktail." the little militant says. 
+
+"And I'll do it again. My skin burns, I'm going inside." John says staunchly. 
 
 *end of dialogue sequence*
+
+John looks toward the oceanic horizon, a gorgeous view made meaningless by the numbing embrace of luxury. He adjusts his back, sprurring a loud rupture down his entire spine. You would think his accomplicies would be concerned, but they all look at the sliding glass door. 
+
+*gameplay continues* 
+
+*once player enters house* 
+
+The smell is beyond unique: a vague mixture of newly waxed walnut flooring, damp topsoil from the potted bromeliads, and the ammonnical stench of exotic animal urine. Walk around, make yourself at home. 
+
+*upon approaching the living room* 
+
+Pure Columbian cocaine runs in arrays along a mirror. Next to that is a clutter of USB drives, whose contents range from ancient bitcoin wallets to galleries of nudity. Who or what is nude? I can't really say. 
+
+*upon approaching the living room / hallway area* 
+
+A full bookshelf, titles seemingly arranged by how many grams of ketamine John injected while he organized it. John's eyes dart around the shelf, he sees: 
+On Liberty - John Stuart Mill 
+All 18 Puranas Hindu scriptures
+The Fountainhead - Ayn Rand 
+Structure and Interpretation of Computer Programs -	Harold Abelson, Gerald Jay Sussman and Julie Sussman
+Two Treatises on Government - John Locke 
+Learn Lines doing Lines: Riemannian Geometry for Today's Junkie - Erich von Hegel Marx Schopenhauer 
 
 Once out in the streets, the first enemy sequence will be triggered (Level 1). Defeat all the enemies and then go to the next section. The map is, from bottom to top: Backyard, House, Streets, Residential, Docks, Airport. 
 
