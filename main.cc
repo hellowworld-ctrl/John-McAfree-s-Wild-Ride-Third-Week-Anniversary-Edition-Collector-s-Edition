@@ -13,16 +13,33 @@ void ioFunction(char input) {
 	lock_guard lock(io_mutex);
 
 	string output = "";
-	if (input == 'W') {}
-	else if (input == 'A') {}
+	//keybinds can change later, this is just a rough draft
+	if (input == 'w') {} // move forward
+	else if (input == 'a') {} // move left
+	else if (input == 's') {} // move right
+	else if (input == 'd') {} // move backwards
+	else if (input == 'i') {} // open inventory
+	else if (input == 'm') {} // open map
+	else if (input == '1') {} // attack
+	else if (input == '2') {} // use item
+	else if (input == '3') {} // flee
 	//.....
 	cout << output << endl;
 }
 
-int main(){
+void networkFunction(string input) {
+	static mutex network_mutex;
+	lock_guard lock(network_mutex);
+
+	// call to server etc. will be here
+}
+
+int main() {
 	while (true) {
 		jthread t1(ioFunction, param); // thread for i/o
+		jthread t2(networkFunction, param); // thread for networking
 
 		t1.join();
+		t2.join();
 	}
 }
