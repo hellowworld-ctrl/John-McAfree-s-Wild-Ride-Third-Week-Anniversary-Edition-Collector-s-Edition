@@ -62,13 +62,13 @@ Pure Columbian cocaine runs in arrays along a mirror. Next to that is a clutter 
 
 *upon approaching the living room / hallway area* 
 
-A full bookshelf, titles seemingly arranged by how many grams of ketamine John injected while he organized it. John's eyes dart around the shelf, he sees: 
-On Liberty - John Stuart Mill 
-All 18 Puranas Hindu scriptures
-The Fountainhead - Ayn Rand 
-Structure and Interpretation of Computer Programs -	Harold Abelson, Gerald Jay Sussman and Julie Sussman
-Two Treatises on Government - John Locke 
-Learn Lines doing Lines: Riemannian Geometry for Today's Junkie - Erich von Hegel Marx Schopenhauer 
+- A full bookshelf, titles seemingly arranged by how many grams of ketamine John injected while he organized it. John's eyes dart around the shelf, he sees: 
+- On Liberty - John Stuart Mill 
+- All 18 Puranas Hindu scriptures
+- The Fountainhead - Ayn Rand 
+- Structure and Interpretation of Computer Programs -	Harold Abelson, Gerald Jay Sussman and Julie Sussman
+- Two Treatises on Government - John Locke 
+- Learn Lines doing Lines: Riemannian Geometry for Today's Junkie - Erich von Hegel Marx Schopenhauer 
 
 "Shit, I've got a nice collection." John mutters to himself. 
 
@@ -96,10 +96,23 @@ You finally leave. Take a look behind and see what you're gonna miss. Your heart
 
 Beyond the poolside and obsessively groomed plant assortments in John's backyard is a small beach. It nicely delimits the borders of his property, something he contemplates in casual libertarian essence. It reminds him of the non-aggression principle, a sort of ethical axiom that declares property as divine permission to do anything with said property minus aggressive acts. That, in turn, reminded him of Ayn Rand - someone so systematically averse to anything good as to probably not enjoy a beach as quaint yet picturesque as McAfee's abode. 
 
+"I don't visit this beach nearly as often as I should." John comments, the Belizean heat glazing his elderly complexion. 
+
+"We're not gonna be visiting this place again, you dumbass." the little militant says. 
+
+"What do you mean? I'm gonna be coming back here." 
+
+"John, we're literally heading to the airport because you're being extradited to the U.S. This is only half the battle. If we get to Miami, there's not gonna be a safe haven." 
+
+"I don't think you know how good I am at this." John says. A solemn finality shows in his words. You can practically hear the pride come up to his larynx and vomit profusely on everyone else. 
+
+*upon going along the beach* 
+
+You walk along the beach with your peers. You wish you could see your lover erotically douse herself in the tides. Suddenly, memories of that exact thing flood your immediate vision, you can even feel the presence of your bodyguards standing like obelisks behind you - except their real presence feels much different. An inane frustration comes over you, as you realize you're feeling new emotions as a man in his seventies.  
 
 
 
-
+ 
 
 
 
@@ -119,7 +132,7 @@ Once out in the streets, the first enemy sequence will be triggered (Level 1). D
 
 
 ## Pickups 
-- Cocaine, Bitcoin, Weapons, Bulletproof Vest, Special USB Stick, Ingredients for Drink (Required for Final Boss);  
+- Cocaine, Bitcoin, Weapons, Bulletproof Vest, Ingredients for Drink (Required for Final Boss);  
 
 ## Random Pickup Dialogue:
 
