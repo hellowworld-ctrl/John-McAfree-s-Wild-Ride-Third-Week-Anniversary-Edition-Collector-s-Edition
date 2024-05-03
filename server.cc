@@ -9,7 +9,7 @@ using boost::asio::ip::tcp;
 int main() {
 	try {
 		boost::asio::io_context io_context;
-		tcp::endpoint endpoint(tcp::v4(), 2345);
+		tcp::endpoint endpoint(tcp::v4(), 2467);
 		tcp::acceptor acceptor(io_context, endpoint);
 		tcp::iostream stream;
 		boost::system::error_code ec;
@@ -17,14 +17,7 @@ int main() {
 		acceptor.accept(stream.socket(), ec);
 		cout << "client has connected\n";
 		if (!ec) {
-			while (true) {
-				stream << "Ping!" << endl;
-				string s;
-				stream >> s;
-				if (!stream) break;
-				cout << "Read: " << s << endl;
-				usleep(333'333);
-			}
+			stream << "https://www.mcafee.com/en-us/antivirus/free.html" << endl;
 		}
 		else cout << "Sadge.\n";
 	}
