@@ -22,7 +22,7 @@
 
 He lies comfortably by the poolside. One hand strokes the chin of his lover, the other massages the cold steel of a Smith & Wesson revolver. Belizean heat scorches his patchy blond hair and kisses the woefully tanned tribal tattoos on both of his shoulders. A mind once preoccupied with malware prevention and proprietary software now faces the incessant jitters of death or, even worse, jail time. He is surrounded by a sort of impromptu paramilitary, whose faces speak of blind loyalty. 
 
-John McAfee: a senior-aged mastermind in the art of evasion. He now assumes the role of virus, with few escapes remaining on an ever dwindling horizon. By this point, he has laid sovereignty on his small coastal abode in Ambergris Cave, enforcing curfews on the town’s helpless citizens. In true libertarian ethos, McAfee lies paranoid in a home devoid of a single tax document, contemplating a method of escape. Miami appears promising. 
+John McAfee: a senior-aged mastermind in the art of evasion. He now assumes the role of virus, with fewer escapes on an ever dwindling horizon. By this point, he has laid sovereignty on his small coastal abode in Ambergris Cave, enforcing curfews on the town’s helpless citizens. In true libertarian ethos, McAfee lies paranoid in a home devoid of a single tax document, contemplating a method of escape. Miami appears promising. 
 
 “The airport - sounds like the only way out of here” McAfee’s little militant says. 
 
@@ -34,9 +34,9 @@ John McAfee: a senior-aged mastermind in the art of evasion. He now assumes the 
 
 "We've been here for months and they haven't even caught what we've been doing with the town. Everyone's a prisoner - I can only imagine what they'll bring out to fight us." 
 
-"She's got a point, John. I've been going up and down these streets for a months maintaing the curfew. Chances are, some brave soul reported us to greather authorities." inquires the taller militant. 
+"She's got a point, John. I've been going up and down these streets for months maintaining the curfew. Chances are, some brave soul reported us to greater authorities." inquires the taller militant. 
 
-"I don't give a shit. There's not a single international contigency that can do anything about us. We're everywhere, we're decentralized, we're not even real - think like crypto. Does crypto have any intrinstic exchange value? Fuck no! I peddle it on my Twitter timeline because it's funny - it's just an append-only data structure. It's like walking around with a wallet that gets bigger or smaller depending on vibes." John rants longingly. 
+"I don't give a shit. There's not a single international contigency that can do anything about us. We're everywhere, we're decentralized, we're not even real - think crypto. Does crypto have any intrinstic exchange value? Fuck no! I peddle it on my Twitter timeline because it's funny - it's just an append-only data structure. It's like walking around with a wallet that gets bigger or smaller depending on vibes." John rants longingly. 
 
 "This is the second time you've said this this afternoon, sitting in that chair, drinking that cocktail." the little militant says. 
 
@@ -56,6 +56,10 @@ The smell is beyond unique: a vague mixture of newly waxed walnut flooring, damp
 
 Pure Columbian cocaine runs in arrays along a mirror. Next to that is a clutter of USB drives, whose contents range from ancient bitcoin wallets to galleries of nudity. Who or what is nude? I can't really say. 
 
+"All those antivirus royalties and you still couldn't hire a god damn cleaning lady" McAfee's girlfriend says begrudingly, her voice echoing upon the house's remarkable acoustics. 
+
+"I kinda' dig the look." the tall militant remarks quietly. 
+
 *upon approaching the living room / hallway area* 
 
 A full bookshelf, titles seemingly arranged by how many grams of ketamine John injected while he organized it. John's eyes dart around the shelf, he sees: 
@@ -66,7 +70,53 @@ Structure and Interpretation of Computer Programs -	Harold Abelson, Gerald Jay S
 Two Treatises on Government - John Locke 
 Learn Lines doing Lines: Riemannian Geometry for Today's Junkie - Erich von Hegel Marx Schopenhauer 
 
+"Shit, I've got a nice collection." John mutters to himself. 
+
+*upon entering the main bedroom* 
+
+A California king sized mattress lies threadbare, stained with a hierarchical mush of unspeakable fluids- its memory foam nearly incapable of rising back to factory position. End tables appear on each of the bed, endlessly branded by a thousand glass rings. One can imagine he'd be sipping mezcal when doing literally anything. His room window overlooks an aesthetic composite of tropical foliage: palm trees, heliconia, lush tapestries of green that arrange the sunlight into a beauty caressing the spirit of a man like McAfee. Naturally, a mirror is on the ceiling. 
+
+"God, I'm gonna miss this view." John says. 
+
+"I know, babe. The helicondia is so beautiful." his girlfriend responds. 
+
+"What? I'm talking about the mirrors." 
+
+*Upon leaving the house from the back* 
+
+You finally leave. Take a look behind and see what you're gonna miss. Your heart flutters a bit, and your chest tightens, like an anvil of sorrow compressing your solar plexus, getting heavier with every heave of your upper body. A tear falls from one eye. You can't remember the last time you've done this. The saltiness of the tear upon your lip, crawling down to your tongue, is a radically foreign taste. Recognizing that your masculinity can't withstand the newness of longing, you visibly shake and shrug your whole body, expecting the emotion to soar off of you and fall between the paving stones. A whole cartography of pain you fail to confront maps little territories of guilt in your mind. This will never dissappear. 
+
+"I'm gonna have to thug this one out, guys." John says.
+
+"What?" the rest of the group asks in near-unison. 
+
+"Hmm, nothing. Let's move on." John says amid a sniff. 
+
+*the following dialogue is triggered if the group decides to not leave immediately, and visit the beach behind John's house.* 
+
+Beyond the poolside and obsessively groomed plant assortments in John's backyard is a small beach. It nicely delimits the borders of his property, something he contemplates in casual libertarian essence. It reminds him of the non-aggression principle, a sort of ethical axiom that declares property as divine permission to do anything with said property minus aggressive acts. That, in turn, reminded him of Ayn Rand - someone so systematically averse to anything good as to probably not enjoy a beach as quaint yet picturesque as McAfee's abode. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Once out in the streets, the first enemy sequence will be triggered (Level 1). Defeat all the enemies and then go to the next section. The map is, from bottom to top: Backyard, House, Streets, Residential, Docks, Airport. 
+
+
+
+
+
 
 ## Pickups 
 - Cocaine, Bitcoin, Weapons, Bulletproof Vest, Special USB Stick, Ingredients for Drink (Required for Final Boss);  
