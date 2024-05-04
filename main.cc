@@ -8,21 +8,38 @@ using namespace std;
 
 // Not completely sure how this will work yet
 // Maybe the function will recieve input from the client, pass it to the server, and output what the server sends back
-void ioFunction(char input) {
+void ioFunction(string input) {
 	static mutex io_mutex;
 	lock_guard lock(io_mutex);
 
 	string output = "";
-	if (input == 'W') {}
-	else if (input == 'A') {}
+	//keybinds can change later, this is just a rough draft
+	if (input == "up arrow") {} // move forward
+	else if (input == "left arrow") {} // move left
+	else if (input == "right arrow") {} // move right
+	else if (input == "down arrow") {} // move backwards
+	else if (input == "i") {} // open inventory
+	else if (input == "m") {} // open map
+	else if (input == "1") {} // attack
+	else if (input == "2") {} // use item
+	else if (input == "3") {} // flee
 	//.....
 	cout << output << endl;
 }
 
-int main(){
+void networkFunction(string input) {
+	static mutex network_mutex;
+	lock_guard lock(network_mutex);
+
+	// call to server etc. will be here
+}
+
+int main() {
 	while (true) {
 		jthread t1(ioFunction, param); // thread for i/o
+		jthread t2(networkFunction, param); // thread for networking
 
 		t1.join();
+		t2.join();
 	}
 }
