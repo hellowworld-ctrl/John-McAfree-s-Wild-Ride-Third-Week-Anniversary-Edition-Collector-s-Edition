@@ -38,5 +38,5 @@ tier.o: tier.cc tier.h
 	$(CC) $(CCFLAGS) -c tier.cc
 
 clean:
-	rm -f main *.o
+	rm -f main example *.o
 
