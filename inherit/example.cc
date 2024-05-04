@@ -7,7 +7,7 @@
 using namespace std;
 
 // Party is a collection of actors.
-// Tier is the skill of an actor. Common -> Uncommon -> Rare -> Epic -> Legendary
+// Tier is the quality of an entity. Common -> Uncommon -> Rare -> Epic -> Legendary
 // Generating parties, actors, or items requires their tier to be passed as an argument.
 
 int main() {
