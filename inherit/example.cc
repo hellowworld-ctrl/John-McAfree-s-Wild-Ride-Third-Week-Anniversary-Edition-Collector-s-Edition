@@ -42,7 +42,11 @@ int main() {
 	// Automatically equip best items available in inventory.
 	exampleParty->equip();
 
-	// --------- HOW TO COMBAT:
+	// ------------ HOW TO MOVE PARTIES AROUND THE MAP:
+	// Pass the desired (x, y) coordinate as a parameter.
+	exampleParty->set_point(2, 2);
+
+	// ------------ HOW TO COMBAT:
 	// Create combat object with an existing hero and monster party as parameters.
 	shared_ptr<Combat> combat = make_shared<Combat>(autoHeroes, autoMonsters);
 	// Prepare to capture the result of the next combat.
