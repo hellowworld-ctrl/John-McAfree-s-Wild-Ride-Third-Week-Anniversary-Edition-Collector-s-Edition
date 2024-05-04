@@ -8,7 +8,7 @@
 - Short Militant 
 
 ### Level 1: 
-- Generic Cops 
+- Citizens
 
 ### Level 2: 
 - FBI Agents 
@@ -115,6 +115,14 @@ You walk along the beach with your peers. You wish you could see your lover erot
 The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority. Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky. Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders. Snipers lurk in the distance. Things already seem to be bad. 
 
 *prompts upon level 2*
+
+After sweating off the trigger happy street-goers, you find your group in a more bourgeois, residential district near the beach. Each house exudes an almost unreachable luxury to them, with their elaborate gated entrances and driveways that fade into a horizon of angular windows and walls. You rub your eyes a bit. As the dots in your retinas dissolve, you see abstract blobs of black and purple along the perimeter of a couple properties. The vaguely yellow blurbs on their clothing appear bright as day: F.B.I. Every one of them is decked out with an armored combat jacket smattered with holsters, carrying all manner of hostile devices. Things are now worse. 
+
+*prompts upon Level 3*
+
+The airport looms mockingly in the distance. Your group collectively feels a cold breeze sift through their loose clothing, and graze their humid skin. The ocean is right next to you. A dozen wooden docks stretch out into the Caribbean Sea, each one sheltered by a thatched-roofed gazebo. Along the docks, an alarming arrangment of people stand adorned in camouflage and high-caliber rifles. They maneuver themselves with artifical precision, like a protocol for impending conquest. Like a neural network, they identify you in a discrete sequence - instructions unfolding for your group's termination. The odds are completely against you. 
+
+*prompts upon level 4* 
 
 
  
