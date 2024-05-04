@@ -1,14 +1,8 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include "combat.h"
-#include "generate.h"
-#include "tier.h"
+#include "./inherit/combat.h"
+#include "./inherit/generate.h"
+#include "./inherit/tier.h"
 using namespace std;
-
-// Party is a collection of actors.
-// Tier is the skill of an actor. Common -> Uncommon -> Rare -> Epic -> Legendary
-// Generating parties, actors, or items requires their tier to be passed as an argument.
 
 int main() {
 
@@ -42,7 +36,11 @@ int main() {
 	// Automatically equip best items available in inventory.
 	exampleParty->equip();
 
-	// --------- HOW TO COMBAT:
+	// ------------ HOW TO MOVE PARTIES AROUND THE MAP:
+	// Pass the desired (x, y) coordinate as a parameter.
+	exampleParty->set_point(2, 2);
+
+	// ------------ HOW TO COMBAT:
 	// Create combat object with an existing hero and monster party as parameters.
 	shared_ptr<Combat> combat = make_shared<Combat>(autoHeroes, autoMonsters);
 	// Prepare to capture the result of the next combat.

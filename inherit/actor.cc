@@ -16,8 +16,10 @@ pair<string, bool> Actor::attack(shared_ptr<Actor> target) {
 	bool is_dead = (target->get_health() == 0) ? true : false;
 	
 	string result = get_name() + " deals " + to_string(total_damage) + " damage to " + target->get_name() + ". ";
-	if (is_dead) result += get_name() + " killed " + target->get_name() + "!";
-
+	if (is_dead) {
+		
+		result += get_name() + " killed " + target->get_name() + "!";
+	}
 	return make_pair(result, is_dead);	
 }
 enum Tier Actor::get_tier() const { 
