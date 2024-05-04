@@ -4,8 +4,14 @@ CCFLAGS = -Wall -Wextra -std=c++2a -O0
 main: main.o combat.o generate.o party.o inventory.o item.o actor.o point.o tier.o
 	$(CC) -g $(CCFLAGS) main.o combat.o generate.o party.o inventory.o item.o actor.o point.o tier.o -o main
 
+test: test.o combat.o generate.o party.o inventory.o item.o actor.o point.o tier.o
+	$(CC) -g $(CCFLAGS) test.o combat.o generate.o party.o inventory.o item.o actor.o point.o tier.o -o test
+
 main.o: main.cc
 	$(CC) $(CCFLAGS) -c main.cc
+
+test.o: test.cc
+	$(CC) $(CCFLAGS) -c test.cc
 
 combat.o: combat.cc combat.h
 	$(CC) $(CCFLAGS) -c combat.cc
