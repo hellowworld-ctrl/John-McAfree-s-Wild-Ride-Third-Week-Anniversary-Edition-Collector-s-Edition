@@ -74,13 +74,13 @@ int main()
 	cin >> input;
 	if (cin.fail()) { input = 0; cin.clear(); cin.ignore(); end(); }
 	if (input > Stats::max_tier) input = Stats::max_tier;
-	shared_ptr<Party<Hero>> heroes = Generate::generate_party<Hero>(static_cast<Tier>(input));
+	shared_ptr<Party<Hero>> heroes = Generate::generate_party<Hero>(static_cast<Tier>(input), 5);
 	
 	cout << endl << "Select monster tier: " << endl;
 	cin >> input;
 	if (cin.fail()) { input = 0; cin.clear(); cin.ignore(); end(); }
 	if (input > Stats::max_tier) input = Stats::max_tier;
-	shared_ptr<Party<Monster>> monsters = Generate::generate_party<Monster>(static_cast<Tier>(input));
+	shared_ptr<Party<Monster>> monsters = Generate::generate_party<Monster>(static_cast<Tier>(input), 5);
 
 	shared_ptr<Combat> combat = make_shared<Combat>(heroes, monsters);
 	pair<string, bool> result = make_pair("Temporary", true);

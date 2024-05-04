@@ -8,7 +8,7 @@
 
 // Fighter: Twice the power
 // Defender: Twice the block
-// Healer: Regeneration applied to entire party
+// Healer: Passive regeneration
 enum Special
 {
 	Fighter = 0,

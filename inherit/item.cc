@@ -21,18 +21,6 @@ enum Tier Weapon::get_tier() const {
 	return static_cast<Tier>(max);
 }
 
-Potion::Potion(string name, int magic) : Item(name), magic(magic) {}
-
-enum Tier Potion::get_tier() const {
-	int magic_tier = magic / Stats::base_skill;
-	
-	int max = 0;
-	if (magic_tier > max) max = magic_tier;
-
-	if (max > Stats::max_tier) max = Stats::max_tier;
-	return static_cast<Tier>(max);
-}
-
 Apparel::Apparel(string name, int block) : Item(name), block(block) {}
 
 enum Tier Apparel::get_tier() const {

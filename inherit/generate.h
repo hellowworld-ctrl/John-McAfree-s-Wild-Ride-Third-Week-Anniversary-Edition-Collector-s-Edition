@@ -8,26 +8,26 @@
 
 namespace Generate
 {
-const int max_party_size = 6;
-const int min_party_size = 3;
+const int max_party_size = 5;
+const int min_party_size = 1;
 
 enum Tier try_lower_tier(enum Tier tier);
 
 std::string generate_weapon_name();
 std::shared_ptr<Weapon> generate_weapon(enum Tier tier);
-std::shared_ptr<Potion> generate_potion(enum Tier tier);
 std::string generate_apparel_name();
 std::shared_ptr<Apparel> generate_apparel(enum Tier tier);
 
 std::shared_ptr<Monster> generate_monster(enum Tier tier);
 std::shared_ptr<Hero> generate_hero(enum Tier tier);
 
-template<typename T> inline std::shared_ptr<Party<T>> generate_party(enum Tier tier) {}
-template<> inline std::shared_ptr<Party<Monster>> generate_party<Monster>(enum Tier tier) {
+template<typename T> inline std::shared_ptr<Party<T>> generate_party(enum Tier tier, int actorAmount) {}
+template<> inline std::shared_ptr<Party<Monster>> generate_party<Monster>(enum Tier tier, int actorAmount) {
 	std::shared_ptr<Party<Monster>> party = std::make_shared<Party<Monster>>();
 	
-	int actor_amount = rand() % (max_party_size + 1);
+	int actor_amount = actorAmount;
 	if (actor_amount < min_party_size) actor_amount = min_party_size;
+	if (actor_amount > max_party_size) actor_amount = max_party_size;
 
 	for (int i = 1; i <= actor_amount; i++)
 	{
@@ -44,11 +44,12 @@ template<> inline std::shared_ptr<Party<Monster>> generate_party<Monster>(enum T
 
 	return party;	
 }
-template<> inline std::shared_ptr<Party<Hero>> generate_party<Hero>(enum Tier tier) {
+template<> inline std::shared_ptr<Party<Hero>> generate_party<Hero>(enum Tier tier, int actorAmount) {
 	std::shared_ptr<Party<Hero>> party = std::make_shared<Party<Hero>>();
 	
-	int actor_amount = rand() % (max_party_size + 1);
+	int actor_amount = actorAmount;
 	if (actor_amount < min_party_size) actor_amount = min_party_size;
+	if (actor_amount > max_party_size) actor_amount = max_party_size;
 
 	for (int i = 1; i <= actor_amount; i++)
 	{

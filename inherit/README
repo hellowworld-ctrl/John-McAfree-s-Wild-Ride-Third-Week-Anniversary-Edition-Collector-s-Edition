@@ -1,0 +1,3 @@
+Combat:
+
+Power sets the minimum threshold for damage dealt, but damage cannot exceed the weapon. Damage is randomized between the minimum threshold and the weapon's damage. Apparel's block is subtracted from damage, where damage must be greater than or equal to one.

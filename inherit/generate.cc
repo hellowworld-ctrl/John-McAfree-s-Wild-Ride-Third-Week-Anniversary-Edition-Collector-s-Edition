@@ -78,14 +78,6 @@ shared_ptr<Weapon> Generate::generate_weapon(enum Tier tier) {
 	if (sum < 1) sum = 1;
 	return make_shared<Weapon>(generate_weapon_name(), sum);
 }
-shared_ptr<Potion> Generate::generate_potion(enum Tier tier) {
-	int base = tier * Stats::base_skill;
-	int add = rand() % Stats::base_skill;
-	int sum = base + add;
-
-	if (sum < 1) sum = 1;
-	return make_shared<Potion>("Potion", sum);	
-}
 string Generate::generate_apparel_name() {
 	int index = rand() % Name::apparel_names.size();
 	return Name::apparel_names.at(index);	

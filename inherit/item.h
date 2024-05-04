@@ -39,21 +39,6 @@ private:
 	std::string get_name() const override { return name; }
 };
 
-class Potion : public Item
-{
-public:
-	Potion(std::string name, int magic);
-
-	std::string get_title() const override { return Stats::get_tier_name(get_tier()) + " " + get_name(); }
-	int get_value() const override { return magic; }
-	int get_magic() const { return magic; }
-private:
-	int magic;
-	
-	enum Tier get_tier() const override;
-	std::string get_name() const override { return name; }
-};
-
 class Apparel : public Item
 {
 public:
