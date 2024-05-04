@@ -21,7 +21,7 @@ void Menode() {
 	noecho();
 
 	vector<string> escMenu = {"Continue\n", "Inventory\n", "QUIT\n", "INFO\n"};
-	vector<string> inventory = {"Not","Implemented","Yet","IDK","Man","It's been rough..."};
+	vector<string> inventory = {"Weapons","Armour","Other","QUIT"};
 	int choice = -1;
 	int highlight = 0;
 
@@ -227,6 +227,9 @@ void puzz() {
 	int highlight = 0;
 
 	while(true) {
+		for (int i = 0; i < 4; i++) {
+				mvwprintw(puzzwin, i+3, 4, choices[i].c_str());
+		}
 		for (int i = 0; i < 4; i++) {
 			if (i == highlight) {
 				wattron(puzzwin, A_REVERSE);
