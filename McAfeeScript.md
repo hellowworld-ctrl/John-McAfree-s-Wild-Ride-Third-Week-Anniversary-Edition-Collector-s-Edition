@@ -110,6 +110,11 @@ Beyond the poolside and obsessively groomed plant assortments in John's backyard
 
 You walk along the beach with your peers. You wish you could see your lover erotically douse herself in the tides. Suddenly, memories of that exact thing flood your immediate vision, you can even feel the presence of your bodyguards standing like obelisks behind you - except their real presence feels much different. An inane frustration comes over you, as you realize you're feeling new emotions as a man in his seventies.  
 
+*prompts upon level 1*
+
+The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority. Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky. Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders. Snipers lurk in the distance. Things already seem to be bad. 
+
+*prompts upon level 2*
 
 
  
