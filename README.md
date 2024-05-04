@@ -7,21 +7,21 @@ Making a compelling piece of media challenging the possibility of what can be ma
 
 
 # Game Reviews: 
-"Wow! Just Wow!!!" - Mencarelli "a2axphoenix"
-"I used to have a Genshin addiction, now I have a McAfee addiction" - Mazzone "Genshin Addict"
-"I dropped out of Stanford to become a McAfee Kick streamer" - Laxamana "Stanford Dad"
-"Greatest piece of media ever made in ten days!!!" - Yang "Among Us"
+- "Wow! Just Wow!!!" - Mencarelli "a2axphoenix"
+- "I used to have a Genshin addiction, now I have a McAfee addiction" - Mazzone "Genshin Addict"
+- "I dropped out of Stanford to become a McAfee Kick streamer" - Laxamana "Stanford Dad"
+- "Greatest piece of media ever made in ten days!!!" - Yang "Among Us"
 
 
 # Team Roles:
-Volodymyr Surin - Project Leader
-Gianni Bellucci - DJ Bridges / Cyber Warrior/ Screenwriter
-Timothy Sokoloff - Spiderman/Spiderwoman
-Jacob Peters - Inheritor of Suffering
-John Brereton - ISAD
-Oscar Li - Taste Tester
-Celeste Hernandez - Socketroth
-Camila Caicedo / Maxwell Burford - JJK Curse Lord
+- Volodymyr Surin - Project Leader
+- Gianni Bellucci - DJ Bridges / Cyber Warrior/ Screenwriter
+- Timothy Sokoloff - Spiderman/Spiderwoman
+- Jacob Peters - Inheritor of Suffering
+- John Brereton - ISAD
+- Camila Caicedo - Taste Tester
+- Celeste Hernandez - Socketroth
+- Maxwell Burford / Oscar Li - JJK Curse Lord
 
 # Developer Diaries:
 4/28/24 - Each member of the dream team of CS41 posted a commit on GitHub, while also coming to an agreement on a hard cap for the due date of Thursday, 5/2/24. This ensures that integration team members have time to focus on integration, conduct the beta test of the game, and squash all bugs.
