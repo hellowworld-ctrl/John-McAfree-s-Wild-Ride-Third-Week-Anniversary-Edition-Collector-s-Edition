@@ -30,6 +30,12 @@ Making a compelling piece of media challenging the possibility of what can be ma
 
 4/30/24 - Everyone is starting to focus and putting functional code into their files as we, as a team, start to grasp what we need to get done. We're also working on finishing the narrative script part of the game, as the script will lay the foundation for gameplay in the future.
 
+5/1/24 - The group undertook position changes to better optimize workflow with different members' schedules. Caicedo and Li switched positions, with Li becoming JJK Curse Lord and Caicedo becoming Taste Tester. This will help us to even complete our goal faster.
+
+5/2/24 - The inheritance class has been heavily worked on and uploaded to Git, laying out the groundwork for upcoming integration. It's not fully done, but good enough to understand what lies ahead for integration.
+
+5/3/24 - As the challenge of the project rises, the group laid out the basic functions to make it a minimal viable product (MVP). We scaled down the project but increased the number of commits to Git. The UI team is meticulously working on getting it to work. 
+
 
 
 
