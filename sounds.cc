@@ -65,7 +65,7 @@ AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2) {
 }
 
 int main() {
-    Bridges bridges = Bridges(133, "BRIDGES_USER_ID", "BRIDGES_API_KEY");
+    Bridges bridges = Bridges(5, "bellucci_0914945", "1248908572516");
     bridges.setTitle("Audio Mixing");
     bridges.setDescription("Fading two audio clips together");
 
