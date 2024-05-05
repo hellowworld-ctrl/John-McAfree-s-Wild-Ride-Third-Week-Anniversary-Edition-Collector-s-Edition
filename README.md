@@ -16,6 +16,11 @@ Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovati
 - "I dropped out of Stanford to become a McAfee Kick streamer" - Laxamana "Stanford Dad"
 - "Greatest piece of media ever made in ten days!!!" - Yang "Among Us"
 
+# Game Controls:
+![Game Controls](game_controls.JPEG)
+Movement:
+
+
 # Meet the Team:
  ![Group Picture](best_team.jpeg)
 We are a group of college students who are undertaking an enormous technical task. To make a compelling RPG in the course of ten days. This group was handpicked for our outstanding abilities and the belief that this task was possible.
@@ -44,6 +49,8 @@ We are a group of college students who are undertaking an enormous technical tas
 5/3/24 - As the challenge of the project rises, the group laid out the basic functions to make it a minimal viable product (MVP). We scaled down the project but increased the number of commits to Git. The UI team is meticulously working on getting it to work. 
 
 5/4/24 - The UI has come together, and work on multiple levels has started. Music is coming along, with the script being refined to make it on par with "The Matrix" in terms of the deeper meaning it carries. Our team has become a steam engine going full speed in terms of productivity. This project is uniting into a completed game.
+
+# Dreams and Nightmares:
 
 
 
