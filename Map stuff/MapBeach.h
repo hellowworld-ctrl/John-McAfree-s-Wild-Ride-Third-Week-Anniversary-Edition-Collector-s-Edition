@@ -11,7 +11,7 @@
 using namespace std;
 
 
-class Map {
+class MapBeach {
 
 	vector<vector<char>> map;
 	default_random_engine gen;
@@ -154,10 +154,10 @@ public:
 		return map.at(y).at(x) == VIRUS;
 	}
 
-	Map() {
+	MapBeach() {
 		generateMap();
 	}
-	~Map() = default;
+	~MapBeach() = default;
 
 
 };

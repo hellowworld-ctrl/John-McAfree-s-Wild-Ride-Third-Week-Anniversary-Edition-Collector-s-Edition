@@ -11,7 +11,7 @@
 using namespace std;
 
 
-class Map {
+class MapHouse {
 
 	vector<vector<char>> map;
 	default_random_engine gen;
@@ -179,11 +179,10 @@ public:
 	bool isEnemy(int &x,int &y) {
 		return map.at(y).at(x) == VIRUS;
 	}
-
-	Map() {
+	MapHouse() {
 		generateMap();
 	}
-	~Map() = default;
+	~MapHouse() = default;
 
 
 };
