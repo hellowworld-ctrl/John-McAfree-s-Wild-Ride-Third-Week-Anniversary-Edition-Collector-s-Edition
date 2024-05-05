@@ -15,188 +15,111 @@ using namespace std;
 Map map;
 
 void Menode() {
-	WINDOW *menuwin = newwin(20,60,20,100);
-	box(menuwin,0,0);
-	keypad(menuwin,TRUE);
+	WINDOW *menuwin = newwin(20, 60, 20, 100);
+	box(menuwin, 0, 0);
+	keypad(menuwin, TRUE);
 	noecho();
 
 	vector<string> escMenu = {"Continue\n", "Inventory\n", "QUIT\n", "INFO\n"};
-	vector<string> inventory = {"Weapons","Armour","Other","QUIT"};
+	vector<string> inventory = {"Weapons", "Armour", "Other", "QUIT"};
 	int choice = -1;
 	int highlight = 0;
 
-	wmove(menuwin,1,1);
+	wmove(menuwin, 1, 1);
 	clear();
 	wrefresh(menuwin);
 	while (true) {
 		for (int i = 0; i < escMenu.size(); i++) {
-			if (i == highlight) wattron(menuwin,A_REVERSE);
-			wmove(menuwin,i+1,1);
-			waddstr(menuwin,escMenu.at(i).c_str());
+			if (i == highlight) wattron(menuwin, A_REVERSE);
+			wmove(menuwin, i + 1, 1);
+			waddstr(menuwin, escMenu.at(i).c_str());
 			wattroff(menuwin, A_REVERSE);
 		}
 		choice = wgetch(menuwin);
 
-		switch(choice) {
-			case 'w':
-				highlight--;
-				if (highlight == -1)
-					highlight = 0;
+		switch (choice) {
+		case 'w':
+			highlight--;
+			if (highlight == -1)
+				highlight = 0;
 			break;
-			case 's':
-				highlight++;
-				if (highlight == 4)
-					highlight = 3;
-				break;
-				defualt:
+		case 's':
+			highlight++;
+			if (highlight == 4)
+				highlight = 3;
+			break;
+defualt:
 			break;
 		}
 		wrefresh(menuwin);
 		if (choice == '\r')
-		break;
+			break;
 
 	}
 	if (highlight == 0) {
 		endwin();
 		clear();
 		int x = 0, y = 0;
-		getyx(stdscr,y,x);
-		map.screen(x,y);
+		getyx(stdscr, y, x);
+		map.screen(x, y);
 		return;
-	}
-	else if (highlight == 1) {
+	} else if (highlight == 1) {
 		//TODO Display inventory using a menu thingie 👌
 		highlight = 0;
 		clear();
 		for (int i = 0; i < inventory.size(); i++) {
-			if (i == highlight) wattron(menuwin,A_REVERSE);
-			wmove(menuwin,i+1,1);
-			waddstr(menuwin,inventory.at(i).c_str());
+			if (i == highlight) wattron(menuwin, A_REVERSE);
+			wmove(menuwin, i + 1, 1);
+			waddstr(menuwin, inventory.at(i).c_str());
 			wattroff(menuwin, A_REVERSE);
 		}
 		wrefresh(menuwin);
 		int choice = -1;
 		while (true) {
 			for (int i = 0; i < inventory.size(); i++) {
-				if (i == highlight) wattron(menuwin,A_REVERSE);
-				wmove(menuwin,i+1,1);
-				waddstr(menuwin,inventory.at(i).c_str());
+				if (i == highlight) wattron(menuwin, A_REVERSE);
+				wmove(menuwin, i + 1, 1);
+				waddstr(menuwin, inventory.at(i).c_str());
 				wattroff(menuwin, A_REVERSE);
 			}
 			wrefresh(menuwin);
 			choice = getch();
-			switch(choice) {
-				case 'w':
-					highlight--;
-					if (highlight < 0)
+			switch (choice) {
+			case 'w':
+				highlight--;
+				if (highlight < 0)
 					highlight = 0;
 				break;
-				case 's':
-					highlight++;
-					if (highlight >= inventory.size())
-						highlight = inventory.size()-1;
+			case 's':
+				highlight++;
+				if (highlight >= inventory.size())
+					highlight = inventory.size() - 1;
 				break;
-				default:
+			default:
 				break;
 			}
 		}
 		if (choice == '\r') {
 			//TODO: Implement an equip system.
 			endwin();
-		clear();
+			clear();
 			int x = 0, y = 0;
-			getyx(stdscr,y,x);
-			map.screen(x,y);
+			getyx(stdscr, y, x);
+			map.screen(x, y);
 			wrefresh(stdscr);
 			return;
 		}
-	}
-	else if (highlight == 2) {
+	} else if (highlight == 2) {
 		//Quit!
-	clear();
+		clear();
 		wrefresh(stdscr);
 		exit(EXIT_SUCCESS);
-	}
-	else if (highlight == 3) {
+	} else if (highlight == 3) {
 		printw("INFO LATER");
 	}
 	wrefresh(menuwin);
 }
 
-void Move(const int &ch, Map&map, WINDOW *win) {
-	int x = 0, y = 0;
-	int xtwo = 0, ytwo = 0;
-	getyx(win,y,x);
-	xtwo = x;
-	ytwo = y;
-	if (ch == 'W' or ch == KEY_UP) {
-		if (map.getPlayerLoc(x,y-1)) {
-			/*mvaddch(y,x,' ');
-			mvaddch(y-1,x,'*');
-			wmove(stdscr,y-1,x);
-
-			wrefresh(stdscr);*/
-			map.screen(x,y-1);
-			wmove(win,y-1,x);
-			wrefresh(win);
-		}
-		else {
-			wmove(win,y,x);
-			wrefresh(win);
-		}
-	}
-	if (ch == 'A' or ch == KEY_LEFT) {
-		if (map.getPlayerLoc(x-1,y)) {
-			/*	mvaddch(y,x,' ');
-			mvaddch(y,x-1,'*');
-			wmove(stdscr,y,x-1);
-			wrefresh(stdscr);*/
-			map.screen(x-1,y);
-			wmove(win,y,x-1);
-			wrefresh(win);
-
-
-		}
-		else {
-			wmove(win,y,x);
-			wrefresh(win);
-		}
-	}
-	if (ch == 'S' or ch == KEY_DOWN) {
-		if (map.getPlayerLoc(x,y+1)) {
-			/*mvaddch(y,x,' ');
-			mvaddch(y+1,x,'*');
-			wmove(stdscr,y+1,x);
-			wrefresh(stdscr);*/
-			map.screen(x,y+1);
-			wmove(win,y+1,x);
-			wrefresh(win);
-		}
-		else {
-			wmove(win,y,x);
-			wrefresh(win);
-		}
-	}
-	if (ch == 'D' or ch == KEY_RIGHT) {
-		if (map.getPlayerLoc(x+1,y)) {
-			/*mvaddch(y,x,' ');
-			mvaddch(y,x+1,'*');
-			wmove(stdscr,y,x+1);
-			wrefresh(stdscr);*/
-			map.screen(x+1,y);
-			wmove(win,y,x+1);
-			wrefresh(win);
-		}
-		else {
-			wmove(win,y,x);
-			wrefresh(win);
-		}
-	}
-	if (map.isEnemy(xtwo,ytwo) == true) {
-		//COMBAT CODE GOES HERE MAYBE!?	
-	}
-
-}
 
 void puzz() {
 	//int height = 0, width = 0;
@@ -205,7 +128,7 @@ void puzz() {
 	move(y, x);
 	getmaxyx(stdscr, yMax, xMax);
 
-	WINDOW * puzzwin = newwin(18, xMax/2, yMax/2, 80);
+	WINDOW * puzzwin = newwin(18, xMax / 2, yMax / 2, 80);
 
 	box(puzzwin, 0, 0);
 	refresh();
@@ -221,34 +144,34 @@ void puzz() {
 	int choice;
 	int highlight = 0;
 
-	while(true) {
+	while (true) {
 		for (int i = 0; i < 4; i++) {
-				mvwprintw(puzzwin, i+3, 4, choices[i].c_str());
+			mvwprintw(puzzwin, i + 3, 4, choices[i].c_str());
 		}
 		for (int i = 0; i < 4; i++) {
 			if (i == highlight) {
 				wattron(puzzwin, A_REVERSE);
-				mvwprintw(puzzwin, i+3, 4, choices[i].c_str());
+				mvwprintw(puzzwin, i + 3, 4, choices[i].c_str());
 				wattroff(puzzwin, A_REVERSE);
 			}
 		}
 		choice = wgetch(puzzwin);
 
-		switch(choice) {
-			case KEY_UP:
-				highlight--;
-				if(highlight == -1)
-					highlight = 0;
-				break;
-			case KEY_DOWN:
-				highlight++;
-				if(highlight == 4)
-					highlight = 3;
-				break;
-			default:
-				break;
+		switch (choice) {
+		case KEY_UP:
+			highlight--;
+			if (highlight == -1)
+				highlight = 0;
+			break;
+		case KEY_DOWN:
+			highlight++;
+			if (highlight == 4)
+				highlight = 3;
+			break;
+		default:
+			break;
 		}
-		if(choice == 32)
+		if (choice == 32)
 			break;
 	}
 	wrefresh(puzzwin);
@@ -258,15 +181,14 @@ void puzz() {
 	init_pair(1, COLOR_GREEN, COLOR_BLACK);
 	init_pair(2, COLOR_RED, COLOR_BLACK);
 
-	if(highlight == 1) {
+	if (highlight == 1) {
 		attron(COLOR_PAIR(1));
-	move(22, 75);
+		move(22, 75);
 		printw("CORRECT! YOU WIN A PRIZE!");
 		attroff(COLOR_PAIR(1));
-	}
-	else {
+	} else {
 		attron(COLOR_PAIR(2));
-	move(22, 75);
+		move(22, 75);
 		printw("INCORRECT! REFRESH ON YOUR (John McAfee) KNOWLEDGE!");
 		attroff(COLOR_PAIR(2));
 	}
@@ -275,6 +197,31 @@ void puzz() {
 	clear();
 	refresh();
 }
+
+void Move(const int &ch, Map&map, WINDOW *win) {
+	int x = 0, y = 0;
+	getyx(win, y, x);
+
+	int newX = x;
+	int newY = y;
+
+	if (ch == 'W' || ch == KEY_UP) newY -= 1;
+	else if (ch == 'A' || ch == KEY_LEFT) newX -= 1;
+	else if (ch == 'S' || ch == KEY_DOWN) newY += 1;
+	else if (ch == 'D' || ch == KEY_RIGHT) newX += 1;
+
+	if (map.isEnemy(newX, newY) == true) {
+		puzz();
+	} else if (map.getPlayerLoc(newX, newY)) {
+		map.screen(newX, newY);
+		wmove(win, newY, newX);
+		wrefresh(win);
+	} else {
+		wmove(win, y, x);
+		wrefresh(win);
+	}
+}
+
 
 int main() {
 	int playerMove = 0;
@@ -290,7 +237,7 @@ int main() {
 		(void) nonl();
 		(void) cbreak();
 		(void) noecho();
-		
+
 
 		start_color();
 		if (has_colors()) {
@@ -304,29 +251,27 @@ int main() {
 		}
 		WINDOW * playwin = newwin(100, 100, 50, 50);
 
-		wmove(playwin,50,50);
-		map.screen(50,50);
+		wmove(playwin, 50, 50);
+		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
 			cin >> playerMove;
 
 			if (playerMove == KEY_F(1)) {
 				Menode();
-			}
-			else if (playerMove == KEY_F(2)) {
+			} else if (playerMove == KEY_F(2)) {
 				puzz();
 			}
 
-			else if (playerMove == ERR) usleep(1'000'000/FPS);
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
 
-				else {
+			else {
 				playerMove = toupper(playerMove);
-				Move(playerMove,map,playwin);		
+				Move(playerMove, map, playwin);
 
 			}
 		}
-	}
-	else usleep(500'00);
+	} else usleep(500'00);
 
 	attroff(COLOR_PAIR(1));
 
