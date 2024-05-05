@@ -202,29 +202,6 @@ void puzz() {
 	refresh();
 }
 
-void MoveHouse(const int &ch, MapHouse&map, WINDOW *win) {
-	int x = 0, y = 0;
-	getyx(win, y, x);
-
-	int newX = x;
-	int newY = y;
-
-	if (ch == 'W' || ch == KEY_UP) newY -= 1;
-	else if (ch == 'A' || ch == KEY_LEFT) newX -= 1;
-	else if (ch == 'S' || ch == KEY_DOWN) newY += 1;
-	else if (ch == 'D' || ch == KEY_RIGHT) newX += 1;
-
-	if (map.isEnemy(newX, newY) == true) {
-		puzz();
-	} else if (map.getPlayerLoc(newX, newY)) {
-		map.screen(newX, newY);
-		wmove(win, newY, newX);
-		wrefresh(win);
-	} else {
-		wmove(win, y, x);
-		wrefresh(win);
-	}
-}
 template<typename MapType>
 void Move(const int &ch, MapType&map, WINDOW *win) {
 	int x = 0, y = 0;
