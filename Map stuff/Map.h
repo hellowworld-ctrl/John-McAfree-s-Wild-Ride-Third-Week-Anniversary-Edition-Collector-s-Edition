@@ -22,7 +22,7 @@ public:
 	static const char TREE = 't';
 	static const char OPEN = ' ';
 	static const char CHEST = 'c';
-	static const size_t SIZE = 500;
+	static const size_t SIZE = 300;
 	static const size_t DISPLAY = 60;
 
 	void generateMap() {
@@ -65,8 +65,8 @@ public:
 				}
 			}
 		}
-		for (size_t i = 35; i < 45; i++) {
-			for (size_t k = 35; k < 45; k++) {
+		for (size_t i = 1; i < 100; i++) {
+			for (size_t k = 1; k < 20; k++) {
 				map.at(i).at(k) = OPEN;
 			}
 		}
@@ -85,6 +85,7 @@ public:
 		init_pair(4,COLOR_YELLOW,COLOR_BLACK);
 		init_pair(5,COLOR_WHITE,COLOR_WHITE);
 		init_pair(6,COLOR_MAGENTA,COLOR_WHITE);
+		init_pair(7,COLOR_RED,COLOR_RED);
 
 		if (start_x < 0) {
 			end_x = end_x - start_x;
@@ -111,12 +112,13 @@ public:
 					attroff(A_UNDERLINE | A_BOLD);
 				}
 				else {
-					int color = 3;
+					int color = 1;
 					if (map.at(i).at(k) == WALL) color = 6;
 					else if (map.at(i).at(k) == TREE) color = 3;
 					else if (map.at(i).at(k) == MCAFREE) color = 5;
 					else if (map.at(i).at(k) == CHEST) color = 4;
 					else if (map.at(i).at(k) == VIRUS) color = 1;
+					else if (map.at(i).at(k) == OPEN) color = 5;
 
 					attron(COLOR_PAIR(color));
 					mvaddch(i-start_y,k-start_x, map.at(i).at(k));
@@ -127,24 +129,12 @@ public:
 		}
 
 	}
-	char getCharChar(int x, int y) {
-		if (x >= 1000 or y >= 1000 or x < 0 or y < 0) return ' ';
-		return map.at(y).at(x);
+	bool getPlayerLoc(int x, int y) {
+		return map.at(y).at(x) == OPEN;
 	}
+
 	bool isEnemy(int &x,int &y) {
-		if (x >= 1000 or y >= 1000 or x <= 3 or y <= 3) {
-			return false;
-		}
-		for (int i = y-3; i < y+3; i++) {
-			for (int k = x-3; k < x+3; k++) {
-				if (map.at(i).at(k) == VIRUS) {
-					y = i;
-					x = k;
-					return true;
-				}
-			}
-		}
-		return false;
+		return map.at(y).at(x) == VIRUS;
 	}
 
 	Map() {

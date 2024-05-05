@@ -127,11 +127,10 @@ void Move(const int &ch, Map&map, WINDOW *win) {
 	int x = 0, y = 0;
 	int xtwo = 0, ytwo = 0;
 	getyx(win,y,x);
-	//cout << x << "|" << y << endl;
 	xtwo = x;
 	ytwo = y;
 	if (ch == 'W' or ch == KEY_UP) {
-		if (map.getCharChar(x,y-1) == ' ') {
+		if (map.getPlayerLoc(x,y-1)) {
 			/*mvaddch(y,x,' ');
 			mvaddch(y-1,x,'*');
 			wmove(stdscr,y-1,x);
@@ -147,7 +146,7 @@ void Move(const int &ch, Map&map, WINDOW *win) {
 		}
 	}
 	if (ch == 'A' or ch == KEY_LEFT) {
-		if (map.getCharChar(x-1,y) == ' ') {
+		if (map.getPlayerLoc(x-1,y)) {
 			/*	mvaddch(y,x,' ');
 			mvaddch(y,x-1,'*');
 			wmove(stdscr,y,x-1);
@@ -164,7 +163,7 @@ void Move(const int &ch, Map&map, WINDOW *win) {
 		}
 	}
 	if (ch == 'S' or ch == KEY_DOWN) {
-		if (map.getCharChar(x,y+1) == ' ') {
+		if (map.getPlayerLoc(x,y+1)) {
 			/*mvaddch(y,x,' ');
 			mvaddch(y+1,x,'*');
 			wmove(stdscr,y+1,x);
@@ -179,7 +178,7 @@ void Move(const int &ch, Map&map, WINDOW *win) {
 		}
 	}
 	if (ch == 'D' or ch == KEY_RIGHT) {
-		if (map.getCharChar(x+1,y) == ' ') {
+		if (map.getPlayerLoc(x+1,y)) {
 			/*mvaddch(y,x,' ');
 			mvaddch(y,x+1,'*');
 			wmove(stdscr,y,x+1);
@@ -282,15 +281,10 @@ void puzz() {
 }
 
 int main() {
-	char player = '*';
-	char enemy = 'X';
 	int playerMove = 0;
-	int num = 0;
 	int FPS = 60;
-	int x = 0, y = 0;
+	Map map;
 
-
-	endwin();
 	system("figlet FREEDOM FIGHTERS - John McAfree");
 	string startButton = read("Enter \'p\' to go into the world!\n");
 	if (startButton == "p") {
@@ -300,8 +294,7 @@ int main() {
 		(void) nonl();
 		(void) cbreak();
 		(void) noecho();
-		WINDOW * startMenu;
-		WINDOW * levelOne;
+		
 
 		start_color();
 		if (has_colors()) {
@@ -313,11 +306,11 @@ int main() {
 			init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
 			init_pair(7, COLOR_WHITE, COLOR_BLACK);
 		}
+		WINDOW * playwin = newwin(300, 300, 150, 150);
 
-		wrefresh(stdscr);
-		wmove(stdscr,100,500);
-		map.screen(100,500);
-		while ((playerMove = wgetch(stdscr)) != KEY_F(11)) {
+		wmove(playwin,150,150);
+		map.screen(150,150);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
 			cin >> playerMove;
 
@@ -332,7 +325,7 @@ int main() {
 
 				else {
 				playerMove = toupper(playerMove);
-				Move(playerMove,map,stdscr);		
+				Move(playerMove,map,playwin);		
 
 			}
 		}
