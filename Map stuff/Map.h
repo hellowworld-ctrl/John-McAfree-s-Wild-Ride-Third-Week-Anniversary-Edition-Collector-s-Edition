@@ -22,7 +22,7 @@ public:
 	static const char TREE = 't';
 	static const char OPEN = ' ';
 	static const char CHEST = 'c';
-	static const size_t SIZE = 300;
+	static const size_t SIZE = 100;
 	static const size_t DISPLAY = 60;
 
 	void generateMap() {
@@ -65,11 +65,13 @@ public:
 				}
 			}
 		}
-		for (size_t i = 1; i < 100; i++) {
+		/* DEMO TO PLACE THINGS AT CERTAIN LOCATIONS
+		for (size_t i = 1; i < 20; i++) {
 			for (size_t k = 1; k < 20; k++) {
 				map.at(i).at(k) = OPEN;
 			}
 		}
+		*/
 	}
 
 

@@ -307,10 +307,10 @@ int main() {
 			init_pair(6, COLOR_MAGENTA, COLOR_BLACK);
 			init_pair(7, COLOR_WHITE, COLOR_BLACK);
 		}
-		WINDOW * playwin = newwin(300, 300, 150, 150);
+		WINDOW * playwin = newwin(100, 100, 50, 50);
 
-		wmove(playwin,150,150);
-		map.screen(150,150);
+		wmove(playwin,50,50);
+		map.screen(50,50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
 			cin >> playerMove;
