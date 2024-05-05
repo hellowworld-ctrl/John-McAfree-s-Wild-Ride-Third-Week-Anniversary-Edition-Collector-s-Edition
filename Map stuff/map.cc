@@ -216,6 +216,7 @@ void puzz() {
 	refresh();
 	wborder(puzzwin, '|', '|', '-', '-', '/', '*', '+', '+');
 	mvwprintw(puzzwin, 1, 1, "Which company did John McAfee found after leaving McAfee Associates(1994)?");
+	mvwprintw(puzzwin, 2, 2, "Press [spacebar] to select an answer. :)");
 	wrefresh(puzzwin);
 
 	// makes it so we can use arrow keys
