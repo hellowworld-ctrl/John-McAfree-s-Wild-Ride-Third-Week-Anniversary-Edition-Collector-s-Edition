@@ -17,7 +17,7 @@
 using namespace std;
 
 
-void Menode() {
+void Menu() {
 	static MapHouse map;
 	WINDOW *menuwin = newwin(20, 60, 20, 100);
 	box(menuwin, 0, 0);
@@ -327,7 +327,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
@@ -349,7 +349,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
@@ -371,7 +371,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
@@ -393,7 +393,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
@@ -415,7 +415,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
@@ -437,7 +437,7 @@ int main() {
 		cin >> playerMove;
 
 		if (playerMove == KEY_F(1)) {
-			Menode();
+			Menu();
 		} else if (playerMove == KEY_F(2)) {
 			puzz();
 		}
