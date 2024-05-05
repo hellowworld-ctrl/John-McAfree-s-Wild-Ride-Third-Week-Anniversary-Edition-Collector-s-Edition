@@ -4,10 +4,11 @@
 # RPG-42 Mission Statement:
 Making a compelling piece of media challenging the possibility of what can be made in ten days. Pushing limits of narrative possibilities to match those of Naughty Dog, with a soundtrack which is more memorable than Marios, and graphic fidelity to make this the new "Crisis" of our era.
 
- ![Game Cover](Game_Cover.png)
+# John McAfrees Wild-Ride
+![Game Cover](Game_Cover.png)
 
 # Back of Box Description:
-Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovations reshaped the global landscape. Retired and residing in the picturesque island nation of Belize, life takes a sinister turn when your neighbor is discovered lifeless, and you find yourself unjustly implicated in the tragedy. Can you navigate the treacherous waters surrounding the island and evade capture, ultimately securing passage to the sun-drenched haven of Miami, Florida? Or will you succumb to the relentless pursuit of justice, facing interrogation and incarceration? Your fate hangs in the balance as you confront formidable adversaries on your quest for liberation. Only you can defy the odds and reclaim your freedom amidst the gripping twists and turns that lie ahead.
+Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovations reshaped the global landscape. Retired and residing in the picturesque island nation of Belize, life takes a sinister turn when your neighbor is discovered lifeless, and you find yourself unjustly implicated in the tragedy. Can you navigate the treacherous waters surrounding the island and evade capture, ultimately securing passage to the sun drenched haven of Miami, Florida? Or will you succumb to the relentless pursuit of justice, facing interrogation and incarceration? Your fate hangs in the balance as you confront formidable adversaries on your quest for liberation. Only you can defy the odds and reclaim your freedom amidst the gripping twists and turns that lie ahead.
 
 # Game Reviews: 
 - "Wow! Just Wow!!!" - Mencarelli "a2axphoenix"
@@ -17,7 +18,7 @@ Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovati
 
 # Meet the Team:
  ![Group Picture](best_team.jpeg)
-
+We are a group of college students who are undertaking an enormous technical task. To make a compelling RPG in the course of ten days. This group was handpicked for our outstanding abilities and the belief that this task was possible.
 
 # Team Roles:
 - Volodymyr Surin - Project Leader
@@ -42,6 +43,7 @@ Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovati
 
 5/3/24 - As the challenge of the project rises, the group laid out the basic functions to make it a minimal viable product (MVP). We scaled down the project but increased the number of commits to Git. The UI team is meticulously working on getting it to work. 
 
+5/4/24 - The UI has come together, and work on multiple levels has started. Music is coming along, with the script being refined to make it on par with "The Matrix" in terms of the deeper meaning it carries. Our team has become a steam engine going full speed in terms of productivity. This project is uniting into a completed game.
 
 
 
