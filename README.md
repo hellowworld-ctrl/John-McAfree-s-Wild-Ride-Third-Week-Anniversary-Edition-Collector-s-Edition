@@ -4,7 +4,8 @@
 # Mission Statement:
 Making a compelling piece of media challenging the possibility of what can be made in ten days. Pushing limits of narrative possibilities to match those of Naughty Dog, with a soundtrack which is more memorable than Marios, and graphic fidelity to make this the new "Crisis" of our era.
 
-
+# Back of Box Description:
+Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovations reshaped the global landscape. Retired and residing in the picturesque island nation of Belize, life takes a sinister turn when your neighbor is discovered lifeless, and you find yourself unjustly implicated in the tragedy. Can you navigate the treacherous waters surrounding the island and evade capture, ultimately securing passage to the sun-drenched haven of Miami, Florida? Or will you succumb to the relentless pursuit of justice, facing interrogation and incarceration? Your fate hangs in the balance as you confront formidable adversaries on your quest for liberation. Only you can defy the odds and reclaim your freedom amidst the gripping twists and turns that lie ahead.
 
 # Game Reviews: 
 - "Wow! Just Wow!!!" - Mencarelli "a2axphoenix"
