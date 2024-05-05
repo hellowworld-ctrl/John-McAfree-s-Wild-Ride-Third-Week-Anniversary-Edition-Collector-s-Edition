@@ -26,7 +26,7 @@ public:
 	static const size_t DISPLAY = 60;
 
 	void generateMap() {
-		uniform_int_distribution<int> d100(1,100);
+		uniform_int_distribution<int> d100(1,1000);
 		map.clear();
 		map.resize(SIZE);
 		for (auto &v : map) v.resize(SIZE,' ');
@@ -37,32 +37,73 @@ public:
 				else if (i == SIZE/2 and j == SIZE/2)
 					map.at(i).at(j) = MCAFREE;
 				else {
-					if (d100(gen) <= 1) {
+					if (d100(gen) <= 2) {
 						map.at(i).at(j) = VIRUS; 
 					}
 					else if (d100(gen) <= 1) {
 						map.at(i).at(j) = CHEST; 
 					}
-					else if (d100(gen) <= 2) {
-						map.at(i).at(j) = WALL; 
-					}
-					else if (d100(gen) <= 1) {
-						map.at(i).at(j) = TREE; 
-					}
-					else if (d100(gen) <= 20) {
+					/*
+					else if (d100(gen) <= 20) { //WHEN TREE, HIGH CHANCE ANOTHER TREE NEXT TO IT
 						if (map.at(i-1).at(j) == TREE or map.at(i+1).at(j) == TREE or map.at(i).at(j-1) == TREE or map.at(i).at(j+1) == TREE) {
 							map.at(i).at(j) = TREE;
 						}
 					}
-					else if (d100(gen) <= 20) {
+					else if (d100(gen) <= 20) { //WHEN WALL, HIGH CHANCE TREE NEXT TO IT
 						if (map.at(i-1).at(j) == WALL or map.at(i+1).at(j) == WALL) {
 							map.at(i).at(j) = TREE;
 						}
 					}
+					*/
 					else {
 						map.at(i).at(j) = OPEN;
 					}
 				}
+			}
+		}
+		for (size_t i = 24; i < 25; i++) {//ROW
+			for (size_t k = 0; k < 40; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 0; i < 20; i++) {//ROW
+			for (size_t k = 39; k < 40; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 74; i < 75; i++) {//ROW
+			for (size_t k = 60; k < 100; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 74; i < 94; i++) {//ROW
+			for (size_t k = 59; k < 60; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 69; i < 70; i++) {//ROW
+			for (size_t k = 0; k < 30; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 69; i < 80; i++) {//ROW
+			for (size_t k = 29; k < 30; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 90; i < 100; i++) {//ROW
+			for (size_t k = 29; k < 30; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 0; i < 30; i++) {//ROW
+			for (size_t k = 70; k < 71; k++) {//COL
+				map.at(i).at(k) = WALL;
+			}
+		}
+		for (size_t i = 30; i < 31; i++) {//ROW
+			for (size_t k = 80; k < 100; k++) {//COL
+				map.at(i).at(k) = WALL;
 			}
 		}
 		/* DEMO TO PLACE THINGS AT CERTAIN LOCATIONS

@@ -193,13 +193,8 @@ void Move(const int &ch, Map&map, WINDOW *win) {
 		}
 	}
 	if (map.isEnemy(xtwo,ytwo) == true) {
-		//		enemyFound(xtwo,ytwo);
-		//		keypad(stdscr,TRUE);
-		//		wrefresh(stdscr);
+		//COMBAT CODE GOES HERE MAYBE!?	
 	}
-	//	if (ch == KEY_NPAGE) {
-	//	form_driver(defualt,REQ_NEXT_FIELD);
-	//	}
 
 }
 
@@ -318,7 +313,7 @@ int main() {
 			if (playerMove == KEY_F(1)) {
 				Menode();
 			}
-			if (playerMove == KEY_F(2)) {
+			else if (playerMove == KEY_F(2)) {
 				puzz();
 			}
 
