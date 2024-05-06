@@ -124,25 +124,15 @@ The airport looms mockingly in the distance. Your group collectively feels a col
 
 *prompts upon level 4* 
 
+Delicate bodies of water meander around you. Your group traverses them without error. Everyone's knees edge on the precipice of falling down completely like they've traversed a marathon through concrete. Hope seems empty, and despair boils underneath the collective conscious of everyone - and yet you see a tower. It's made of concrete, a hexagonal mass complimenting the very top. It is a watchtower, one made to oversee travels in flight. You've made it to the airport in pieces. It's empty, unsettingly so. 
 
- 
+You get to the runway as the aircrafts slowly taxi about in large discretions. A helicopter, as if to appear from the void above, comes into view and gently lands on a helipad. The helicopter looks innocuous at first: a sort of olive drab with accents of white. Your companions look closer. Plastered across the tail boom, it says, "UNITED STATES OF AMERICA." Several armored men exit the craft. They looked to be guarding someone, and they are. The people move around and everyone notices the figure. It is former Secretary of State, Hilary Rodham Clinton. 
 
+"Hello, John" she says, her face cut with the most insidiuous smirk.
 
-
-
-
-
-
-
-
-
+*combat begins*  
 
 Once out in the streets, the first enemy sequence will be triggered (Level 1). Defeat all the enemies and then go to the next section. The map is, from bottom to top: Backyard, House, Streets, Residential, Docks, Airport. 
-
-
-
-
-
 
 ## Pickups 
 - Cocaine, Bitcoin, Weapons, Bulletproof Vest, Ingredients for Drink (Required for Final Boss);  
@@ -189,7 +179,6 @@ Once out in the streets, the first enemy sequence will be triggered (Level 1). D
 ### With the FBI
 
 "Look, our pals from the Bureau."
-
 "Geez, I used to work with these guys." 
 "One dead fed." 
 "'Think he's a gonner." 
