@@ -85,6 +85,83 @@ public:
 
 	}
 
+	void puzz() {
+		//int height = 0, width = 0;
+		int x = 30, y = 30, yMax = 50, xMax = 50;
+		// moves the cursor
+		move(y, x);
+		getmaxyx(stdscr, yMax, xMax);
+
+		WINDOW* puzzwin = newwin(18, xMax / 2, yMax / 2, 80);
+
+		box(puzzwin, 0, 0);
+		refresh();
+		wborder(puzzwin, '|', '|', '-', '-', '/', '*', '+', '+');
+		mvwprintw(puzzwin, 1, 1, "What was [John McAfee] wanted for in [Belieze]? And what was [he] charged with on [his] inevitable arrest?");
+		mvwprintw(puzzwin, 2, 2, "Press [enter] to select an answer. :)");
+		wrefresh(puzzwin);
+
+		// makes it so we can use arrow keys
+		keypad(puzzwin, true);
+
+		string choices[4] = { "Wait what? They never caught me!", "Tax Evasion and First Degree Murder", "Possesion of cocain and distribution of cocain... *sniff*", "Suspicion of Murder and Tax Evasion." };
+		int choice;
+		int highlight = 0;
+
+		while (true) {
+			for (int i = 0; i < 4; i++) {
+				mvwprintw(puzzwin, i + 3, 4, choices[i].c_str());
+			}
+			for (int i = 0; i < 4; i++) {
+				if (i == highlight) {
+					wattron(puzzwin, A_REVERSE);
+					mvwprintw(puzzwin, i + 3, 4, choices[i].c_str());
+					wattroff(puzzwin, A_REVERSE);
+				}
+			}
+			choice = wgetch(puzzwin);
+
+			switch (choice) {
+			case 'w':
+				highlight--;
+				if (highlight == -1)
+					highlight = 0;
+				break;
+			case 's':
+				highlight++;
+				if (highlight == 4)
+					highlight = 3;
+				break;
+			default:
+				break;
+			}
+			if (choice == '\r')
+				break;
+		}
+		wrefresh(puzzwin);
+		move(20, 75);
+		printw("YOU CHOSE: %s", choices[highlight].c_str());
+		start_color();
+		init_pair(1, COLOR_GREEN, COLOR_BLACK);
+		init_pair(2, COLOR_RED, COLOR_BLACK);
+
+		if (highlight == 3) {
+			attron(COLOR_PAIR(1));
+			move(22, 75);
+			printw("CORRECT! YOU WIN A PRIZE!");
+			attroff(COLOR_PAIR(1));
+		}
+		else {
+			attron(COLOR_PAIR(2));
+			move(22, 75);
+			printw("INCORRECT! REFRESH ON YOUR (John McAfee) KNOWLEDGE!");
+			attroff(COLOR_PAIR(2));
+		}
+
+		getch();
+		clear();
+		refresh();
+	}
 
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
