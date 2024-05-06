@@ -13,9 +13,9 @@ using namespace std;
 
 class MapBeach {
 
-	vector<vector<char>> map;
 	default_random_engine gen;
 public:
+	vector<vector<char>> map;
 	static const char MCAFREE = '@';
 	static const char VIRUS = 'V';
 	static const char WALL = '#';
