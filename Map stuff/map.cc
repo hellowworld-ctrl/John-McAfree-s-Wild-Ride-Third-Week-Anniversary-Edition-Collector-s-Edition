@@ -24,7 +24,7 @@ void Menu() {
 	keypad(menuwin, TRUE);
 	noecho();
 
-	vector<string> escMenu = {"Continue\n", "Inventory\n", "QUIT\n", "INFO\n"};
+	vector<string> escMenu = {"Continue\n", "Inventory\n", "Control\n"};
 	vector<string> inventory = {"Weapons", "Armour", "Other", "QUIT"};
 	int choice = -1;
 	int highlight = 0;
@@ -49,10 +49,10 @@ void Menu() {
 			break;
 			case 's':
 				highlight++;
-				if (highlight == 4)
-					highlight = 3;
+				if (highlight == 3)
+					highlight = 2;
 				break;
-			defualt:
+			default:
 			break;
 		}
 		wrefresh(menuwin);
@@ -114,12 +114,12 @@ void Menu() {
 			return;
 		}
 	} else if (highlight == 2) {
-		//Quit!
-	clear();
-		wrefresh(stdscr);
-		exit(EXIT_SUCCESS);
-	} else if (highlight == 3) {
-		printw("INFO LATER");
+		printw("'q' - quit");
+		mvprintw(1, 0, "'w' - right");
+		mvprintw(2, 0, "'a' - left");
+		mvprintw(3, 0, "'s' - down");
+		mvprintw(4, 0, "'d' - right");
+		mvprintw(5, 0, "'enter' - select");
 	}
 	wrefresh(menuwin);
 }
@@ -138,7 +138,7 @@ void puzz() {
 	refresh();
 	wborder(puzzwin, '|', '|', '-', '-', '/', '*', '+', '+');
 	mvwprintw(puzzwin, 1, 1, "Which company did John McAfee found after leaving McAfee Associates(1994)?");
-	mvwprintw(puzzwin, 2, 2, "Press [spacebar] to select an answer. :)");
+	mvwprintw(puzzwin, 2, 2, "Press [enter] to select an answer. :)");
 	wrefresh(puzzwin);
 
 	// makes it so we can use arrow keys
@@ -162,12 +162,12 @@ void puzz() {
 		choice = wgetch(puzzwin);
 
 		switch (choice) {
-			case KEY_UP:
+			case 'w':
 				highlight--;
 				if (highlight == -1)
 					highlight = 0;
 			break;
-			case KEY_DOWN:
+			case 's':
 				highlight++;
 				if (highlight == 4)
 					highlight = 3;
@@ -175,7 +175,7 @@ void puzz() {
 			default:
 			break;
 		}
-		if (choice == 32)
+		if (choice == '\r')
 		break;
 	}
 	wrefresh(puzzwin);
@@ -272,6 +272,7 @@ int main() {
 	wattroff(mainwin, COLOR_PAIR(5));
 	wattron(mainwin, COLOR_PAIR(6));
 	mvwprintw(mainwin, 2, 6, "FREEDOM FIGHTERS - John McAfee");
+	mvwprintw(mainwin, 2, 60, "F1 key for menu in game");
 	wattroff(mainwin, COLOR_PAIR(6));
 
 	// makes it so we can use arrow keys
@@ -297,12 +298,12 @@ int main() {
 		choice = wgetch(mainwin);
 
 		switch(choice) {
-			case KEY_UP:
+			case 'w' :
 				highlight--;
 				if(highlight == -1)
 				highlight = 0;
 			break;
-			case KEY_DOWN:
+			case 's' :
 				highlight++;
 				if(highlight == 5)
 				highlight = 4;
@@ -310,7 +311,7 @@ int main() {
 			default:
 			break;
 		}
-		if(choice == 32)
+		if(choice == '\r')
 		break;
 	}
 	wrefresh(mainwin);

@@ -148,6 +148,9 @@ public:
 	bool getPlayerLoc(int x, int y) {
 		return map.at(y).at(x) == OPEN;
 	}
+	bool isChest(int &x,int &y) {
+		return map.at(y).at(x) == CHEST;
+	}
 
 	bool isEnemy(int &x,int &y) {
 		return map.at(y).at(x) == VIRUS;
