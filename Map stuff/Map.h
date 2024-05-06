@@ -193,7 +193,6 @@ public:
 		refresh();
 	}
 
-
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
 		int end_x = x + DISPLAY/2;
@@ -260,6 +259,44 @@ public:
 	bool isEnemy(int &x,int &y) {
 		return map.at(y).at(x) == VIRUS;
 	}
+
+	void monsterMove() {
+		
+		int randomNum = ((rand() % 4) + 1);
+		randomNum = 2;
+		int count = 0;
+
+		for (size_t i = 0; i < SIZE; i++) {
+			for (size_t j = 0; j < SIZE; j++) {
+				if (i == 0 or j == 0 or i == SIZE-1 or j == SIZE-1)
+					map.at(i).at(j) = WALL;
+				else if (map.at(i).at(j) == VIRUS) {
+					if (randomNum == 1) {
+						map.at(i-1).at(j) = VIRUS; 
+						map.at(i).at(j) = OPEN; 
+					}
+					else if (randomNum == 2) {
+						if (count == 0) {
+							map.at(i+1).at(j) = VIRUS; 
+							map.at(i).at(j) = OPEN; 
+							count++;
+						}
+					}
+					else if (randomNum == 3) {
+						map.at(i).at(j-1) = VIRUS; 
+						map.at(i).at(j) = OPEN; 
+					}
+					else if (randomNum == 4) {
+						map.at(i).at(j+1) = VIRUS; 
+						map.at(i).at(j) = OPEN; 
+					}
+				}
+			}
+		}
+
+	}
+
+
 	MapHouse() {
 		generateMap();
 	}

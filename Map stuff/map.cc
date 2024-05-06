@@ -133,13 +133,18 @@ void Move(const int &ch, MapType&map, WINDOW *win) {
 	int newX = x;
 	int newY = y;
 
+	int randomNum = ((rand() % 4) + 1);
+
+	if (randomNum == 1) {
+		
+	}
+
 	if (ch == 'W' || ch == KEY_UP) newY -= 1;
 	else if (ch == 'A' || ch == KEY_LEFT) newX -= 1;
 	else if (ch == 'S' || ch == KEY_DOWN) newY += 1;
 	else if (ch == 'D' || ch == KEY_RIGHT) newX += 1;
 
 	if (map.isEnemy(newX, newY) == true) {
-		puzz();
 	} else if (map.isChest(newX, newY) == true) {
 		mvprintw(0, 80, "OPENED CHEST BUT DOES NOTHING YET");
 		refresh();
@@ -266,6 +271,7 @@ int main() {
 
 			else {
 			playerMove = toupper(playerMove);
+			map.monsterMove();
 			Move(playerMove, map, playwin);
 
 		}
