@@ -10,7 +10,7 @@ using namespace bridges;
 
 AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDuration, int duration) {
   if (ac1.getSampleRate() != ac2.getSampleRate()) {
-    throw "can't mix audio clips of varying rates";
+    throw "make sure all audio is 44100khz, that's standard CD quality";
   }
   
   // sample count = sample rate * number of seconds
@@ -67,22 +67,43 @@ AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2) {
 int main() {
     Bridges bridges = Bridges(5, "bellucci_0914945", "1248908572516");
     bridges.setTitle("Audio Mixing");
-    bridges.setDescription("Fading two audio clips together");
+    bridges.setDescription("Consolidating different tracks into one mix");
 
     // Load the clips
 
-    AudioClip mainMenu = AudioClip("menu.wav");
+    AudioClip mainMenu = AudioClip("main_theme.wav");
     bridges.setDataStructure(mainMenu);
     bridges.visualize();
 
-    AudioClip theBeach = AudioClip("beach theme.wav") 
+    AudioClip menu = AudioClip("menu.wav") 
+    bridges.setDataStructure(menu);
+    bridges.visualize();
+
+    AudioClip theBeach = AudioClip("beach_theme.wav") 
     bridges.setDataStructure(theBeach);
+    bridges.visualize();
+
+    AudioClip background = AudioClip("background.wav") 
+    bridges.setDataStructure(background);
+    bridges.visualize();
+
+    AudioClip mcAfeeHouse = AudioClip("mcafee's_house(final).wav") 
+    bridges.setDataStructure(mcAfeeHouse);
+    bridges.visualize();
+
+    AudioClip combat = AudioClip("combat_theme_new.wav") 
+    bridges.setDataStructure(combat);
+    bridges.visualize();
+
+  
+    AudioClip theEnd = AudioClip("bitcrushmacro.wav") 
+    bridges.setDataStructure(theEnd);
     bridges.visualize();
         
     // Apply fade mixing to the two AudioClips and visualize
-    AudioClip acFadeMix = mixFadeClips(mainMenu, theBeach);
-    bridges.setDataStructure(acFadeMix);
-    bridges.visualize();
+    //AudioClip acFadeMix = mixFadeClips(mainMenu, theBeach);
+    //bridges.setDataStructure(acFadeMix);
+    //bridges.visualize();
 
     return 0;
 }
