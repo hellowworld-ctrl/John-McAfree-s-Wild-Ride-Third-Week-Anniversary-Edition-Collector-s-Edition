@@ -114,6 +114,73 @@ public:
 		}
 		*/
 	}
+	void lore() {
+		//int height = 0, width = 0;
+		int x = 0, y = 0, yMax = 0, xMax = 0;
+		// moves the cursor
+		move(0, 0);
+		getyx(stdscr, y, x);
+		getmaxyx(stdscr, yMax, xMax);
+
+		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
+
+		box(puzzwin, 0, 0);
+		refresh();
+		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
+		mvwprintw(puzzwin, 1, 2, "He lies comfortably by the poolside. One hand strokes the chin of his lover, the other massages the cold steel of a Smith & Wesson revolver.");
+		mvwprintw(puzzwin, 2, 2, "Belizean heat scorches his patchy blond hair and kisses the woefully tanned tribal tattoos on both of his shoulders.");
+		mvwprintw(puzzwin, 3, 2, "A mind once preoccupied with malware prevention and proprietary software now faces the incessant jitters of death or, even worse, jail time. ");
+		mvwprintw(puzzwin, 4, 2, "He is surrounded by a sort of impromptu paramilitary, whose faces speak of blind loyalty. ");
+		mvwprintw(puzzwin, 5, 2, "John McAfee : a senior - aged mastermind in the art of evasion.He now assumes the role of virus, with fewer escapes on an ever dwindling horizon.");
+		mvwprintw(puzzwin, 6, 2, "By this point, he has laid sovereignty on his small coastal abode in Ambergris Cave, enforcing curfews on the town's helpless citizens");
+		mvwprintw(puzzwin, 7, 2, "In true libertarian ethos, McAfee lies paranoid in a home devoid of a single tax document, contemplating a method of escape.Miami appears promising.");
+		mvwprintw(puzzwin, 9, 2, "'The airport - sounds like the only way out of here' McAfee's little militant says.");
+		mvwprintw(puzzwin, 11, 2, "'We can try.The Fed has scoped the whole coast.More feds than a Lockeed Martin conference.' McAfee says, shaking through sips of scotch.");
+		mvwprintw(puzzwin, 13, 2, "'I'm scared, Johnny.' mutters his underaged girlfriend.");
+		mvwprintw(puzzwin, 15, 2, "'Why, darling ? ' John asks.");
+		mvwprintw(puzzwin, 17, 2, "We've been here for months and they haven't even caught what we've been doing with the town. Everyone's a prisoner - I can only imagine what they'll bring out to fight us.");
+		mvwprintw(puzzwin, 19, 2, "'She's got a point, John. I've been going up and down these streets for months maintaining the curfew. Chances are, some brave soul reported us to greater authorities.' inquires the taller militant.");
+		mvwprintw(puzzwin, 21, 2, "I don't give a shit. There's not a single international contigency that can do anything about us. We're everywhere, we're decentralized, we're not even real - think crypto.");
+		mvwprintw(puzzwin, 23, 2, "Does crypto have any intrinstic exchange value? Fuck no! I peddle it on my Twitter timeline because it's funny - it's just an append-only data structure.");
+		mvwprintw(puzzwin, 25, 2, "'It's like walking around with a wallet that gets bigger or smaller depending on vibes.' John rants longingly.");
+		mvwprintw(puzzwin, 27, 2, "'This is the second time you've said this this afternoon, sitting in that chair, drinking that cocktail.' the little militant says.");
+		mvwprintw(puzzwin, 29, 2, "'And I'll do it again. My skin burns, I'm going inside.' John says staunchly.");
+		mvwprintw(puzzwin, 30, 2, "* end of dialogue sequence *");
+		mvwprintw(puzzwin, 32, 2, "John looks toward the oceanic horizon, a gorgeous view made meaningless by the numbing embrace of luxury.He adjusts his back, sprurring a loud rupture down his entire spine.");
+		mvwprintw(puzzwin, 33, 2, "You would think his accomplicies would be concerned, but they all look at the sliding glass door.");
+		mvwprintw(puzzwin, 34, 2, "The smell is beyond unique : a vague mixture of newly waxed walnut flooring, damp topsoil from the potted bromeliads, and the ammonnical stench of exotic animal urine.");
+		mvwprintw(puzzwin, 35, 2, "Walk around, make yourself at home.");
+		wrefresh(puzzwin);
+		mvwprintw(puzzwin, 37, 2, "	* upon approaching the living room*");
+		mvwprintw(puzzwin, 38, 2, "Pure Columbian cocaine runs in arrays along a mirror.Next to that is a clutter of USB drives, whose contents range from ancient bitcoin wallets to galleries of nudity.");
+		mvwprintw(puzzwin, 39, 2, "Who or what is nude ? I can't really say. ");
+		mvwprintw(puzzwin, 41, 2, "'All those antivirus royalties and you still couldn't hire a god damn cleaning lady' McAfee's girlfriend says begrudingly, her voice echoing upon the house's remarkable acoustics.");
+		mvwprintw(puzzwin, 43, 2, "'I kinda' dig the look.' the tall militant remarks quietly.");
+		mvwprintw(puzzwin, 44, 2, "* upon approaching the living room / hallway area *");
+		mvwprintw(puzzwin, 45, 3, "	-A full bookshelf, titles seemingly arranged by how many grams of ketamine John injected while he organized it.John's eyes dart around the shelf, he sees: ");
+		mvwprintw(puzzwin, 46, 3, "	- On Liberty - John Stuart Mill");
+		mvwprintw(puzzwin, 47, 3, "	- All 18 Puranas Hindu scriptures");
+		mvwprintw(puzzwin, 48, 3, "	- The Fountainhead - Ayn Rand");
+		mvwprintw(puzzwin, 49, 3, "	- Structure and Interpretation of Computer Programs - Harold Abelson, Gerald Jay Sussman and Julie Sussman");
+		mvwprintw(puzzwin, 50, 3, "	- Two Treatises on Government - John Locke");
+		mvwprintw(puzzwin, 51, 3, "	- Learn Lines doing Lines : Riemannian Geometry for Today's Junkie - Erich von Hegel Marx Schopenhauer ");
+		mvwprintw(puzzwin, 53, 2, "	'Shit, I've got a nice collection.' John mutters to himself.");
+		mvwprintw(puzzwin, 55, 2, "* upon entering the main bedroom *");
+		mvwprintw(puzzwin, 56, 2, "A California king sized mattress lies threadbare, stained with a hierarchical mush of unspeakable fluids - its memory foam nearly incapable of rising back to factory position.");
+		mvwprintw(puzzwin, 57, 2, "End tables appear on each of the bed, endlessly branded by a thousand glass rings.One can imagine he'd be sipping mezcal when doing literally anything. ");
+		mvwprintw(puzzwin, 58, 2, "His room window overlooks an aesthetic composite of tropical foliage: palm trees, heliconia, lush tapestries of green that arrange the sunlight into a beauty caressing the spirit of a man like McAfee.");
+		mvwprintw(puzzwin, 59, 2, "Naturally, a mirror is on the ceiling. ");
+		mvwprintw(puzzwin, 61, 2, "'God, I'm gonna miss this view.' John says.");
+		mvwprintw(puzzwin, 63, 2, "'I know, babe. The helicondia is so beautiful.' his girlfriend responds.");
+		mvwprintw(puzzwin, 65, 2, "'What? I'm talking about the mirrors.'");
+		wrefresh(puzzwin);
+
+
+		getch();
+		clear();
+		refresh();
+	}
+
 
 	bool puzz() {
 		//int height = 0, width = 0;

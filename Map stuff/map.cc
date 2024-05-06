@@ -257,6 +257,9 @@ label:
 
 	if (highlight == 0) {
 		MapHouse map;
+		map.lore();
+		clear();
+		refresh();
 		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
@@ -286,6 +289,9 @@ label:
 	}
 	else if (highlight == 1 and keyBeach == true) {
 		MapBeach map;
+		map.lore();
+		clear();
+		refresh();
 		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
@@ -315,6 +321,9 @@ label:
 	}
 	else if (highlight == 2 and keyRoad == true) {
 		MapRoad map;
+		map.lore();
+		clear();
+		refresh();
 		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
@@ -344,6 +353,9 @@ label:
 	}
 	else if (highlight == 3 and keyCity == true) {
 		MapCity map;
+		map.lore();
+		clear();
+		refresh();
 		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 
@@ -373,6 +385,9 @@ label:
 	}
 	else if (highlight == 4 and keyAirport == true) {
 		MapAirport map;
+		map.lore();
+		clear();
+		refresh();
 		map.screen(50, 50);
 		while ((playerMove = wgetch(stdscr)) != 'q') {
 

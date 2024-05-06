@@ -180,6 +180,41 @@ public:
 		refresh();
 	}
 
+	void lore() {
+		//int height = 0, width = 0;
+		int x = 0, y = 0, yMax = 0, xMax = 0;
+		// moves the cursor
+		move(0, 0);
+		getyx(stdscr, y, x);
+		getmaxyx(stdscr, yMax, xMax);
+
+		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
+
+		box(puzzwin, 0, 0);
+		refresh();
+		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
+
+		mvwprintw(puzzwin, 2, 2, "Delicate bodies of water meander around you.Your group traverses them without error.");
+		mvwprintw(puzzwin, 3, 2, "Everyone's knees edge on the precipice of falling down completely like they've traversed a marathon through concrete.Hope seems empty, and despair boils underneath the collective conscious of everyone - and yet you see a tower.");
+		mvwprintw(puzzwin, 4, 2, "It's made of concrete, a hexagonal mass complimenting the very top. It is a watchtower, one made to oversee travels in flight. You've made it to the airport in pieces.");
+		mvwprintw(puzzwin, 5, 2, "It's empty, unsettingly so. ");
+
+		mvwprintw(puzzwin, 7, 2, "You get to the runway as the aircrafts slowly taxi about in large discretions.");
+		mvwprintw(puzzwin, 8, 2, "A helicopter, as if to appear from the void above, comes into view and gently lands on a helipad.The helicopter looks innocuous at first : a sort of olive drab with accents of white.");
+		mvwprintw(puzzwin, 9, 2, "Your companions look closer.Plastered across the tail boom, it says, 'UNITED STATES OF AMERICA.' Several armored men exit the craft.They looked to be guarding someone, and they are.");
+		mvwprintw(puzzwin, 10, 2, "The people move around and everyone notices the figure.");
+
+		mvwprintw(puzzwin, 12, 2, "It is former Secretary of State, Hilary Rodham Clinton.");
+
+		mvwprintw(puzzwin, 15, 5, "'Hello, John' she says, her face cut with the most insidiuous smirk.After sweating off the trigger happy street - goers, you find your group in a more bourgeois, residential district near the beach.");
+
+
+
+		getch();
+		clear();
+		refresh();
+	}
+
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
 		int end_x = x + DISPLAY/2;
