@@ -299,6 +299,7 @@ int main() {
 
     mainParty = Generate::generate_party<Hero>(Tier::Rare, 5);
 label:
+	backToMenu = false;
 	/*
 	system("figlet FREEDOM FIGHTERS - John McAfree");
 	string startButton = read("Enter \'p\' to go into the world!\n");
