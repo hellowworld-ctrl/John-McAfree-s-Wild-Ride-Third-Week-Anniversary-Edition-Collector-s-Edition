@@ -19,6 +19,22 @@ Step into the shoes of John McAfee, a visionary tech entrepreneur whose innovati
 # Game Controls:
 ![Game Controls](game_controls.JPEG)
 Movement:
+- W "UP"
+- A "Left"
+- D "Right"
+- S "Down"
+
+Interact:
+To Select
+- Return "Apple"
+- Enter "Windows"
+
+Menu:
+- F1 "Pull Up Menu"
+- Q "Quit"
+
+Puzzle:
+- F2 "Pull Up Puzzles"
 
 
 # Meet the Team:
