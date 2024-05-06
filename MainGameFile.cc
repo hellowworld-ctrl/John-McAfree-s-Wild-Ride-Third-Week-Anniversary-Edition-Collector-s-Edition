@@ -21,6 +21,12 @@
 using namespace std;
 
 shared_ptr<Party<Hero>> mainParty;
+int enemiesKilled = 0;
+bool keyBeach = false;
+bool keyRoad = false;
+bool keyCity = false;
+bool keyAirport = false;
+int backToMenu = false;
 
 void Menu() {
 	static MapHouse map;
@@ -199,6 +205,7 @@ void Menu() {
             attron(COLOR_PAIR(1));
             move(22, 105);
             printw(finalBout.c_str());
+		    enemiesKilled+= 1;
             attroff(COLOR_PAIR(1));
         } else {
             attron(COLOR_PAIR(2));
@@ -230,6 +237,22 @@ void Move(const int &ch, MapType&map, WINDOW *win) {
 
 	if (map.isEnemy(newX, newY) == true) {
 		CombatMode();
+		wmove(win, y, x);
+		wrefresh(win);
+
+		if(enemiesKilled == 3)
+		{
+           mvprintw(100, 100, "NEW MAP UNLOCKED!"); 
+		  if(!keyBeach) keyBeach = true;
+		  else if(!keyRoad) keyRoad = true;
+		  else if(!keyCity) keyCity = true;
+		  else keyAirport = true;
+	
+		  backToMenu = true;
+		  enemiesKilled = 0;
+		wrefresh(win);
+			sleep(1);
+		}
 		map.map.at(newY).at(newX) = map.OPEN;
 		wmove(win, y, x);
 		wrefresh(win);
@@ -273,10 +296,6 @@ int main() {
 	nonl();
 	cbreak();
 	noecho();
-	bool keyBeach = true;
-	bool keyRoad = true;
-	bool keyCity = true;
-	bool keyAirport = true;
 
     mainParty = Generate::generate_party<Hero>(Tier::Rare, 5);
 label:
@@ -323,15 +342,15 @@ label:
 
 	int choice;
 	int highlight = 0;
-	string Choices[5] = {"Level 1 - House", "Level 2 - Beach", "Level 3 - Road", "Level 4 - City", "Level 5 - Airport"};
+	string Choices[6] = {"Level 1 - House", "Level 2 - Beach", "Level 3 - Road", "Level 4 - City", "Level 5 - Airport", "DEBUG: Unlock All Levels(If you want to check them out.)"};
 
 	while(true) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			wattron(mainwin, COLOR_PAIR(5));
 			mvwprintw(mainwin, i+4, 4, Choices[i].c_str());
 			wattroff(mainwin, COLOR_PAIR(5));
 		}
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			if (i == highlight) {
 				wattron(mainwin, A_REVERSE | COLOR_PAIR(6));
 				mvwprintw(mainwin, i+4, 4, Choices[i].c_str());
@@ -348,8 +367,8 @@ label:
 			break;
 			case 's' :
 				highlight++;
-				if(highlight == 5)
-					highlight = 4;
+				if(highlight == 6)
+					highlight = 5;
 			break;
 			default:
 			break;
@@ -392,7 +411,7 @@ label:
 				playerMove = toupper(playerMove);
 				map.monsterMove();
 				Move(playerMove, map, playwin);
-
+                if(backToMenu) goto label;
 			}
 		}
 	}
@@ -424,6 +443,7 @@ label:
 				playerMove = toupper(playerMove);
 				map.monsterMove();
 				Move(playerMove, map, playwin);
+                if(backToMenu) goto label;
 
 			}
 		}
@@ -456,6 +476,7 @@ label:
 				playerMove = toupper(playerMove);
 				map.monsterMove();
 				Move(playerMove, map, playwin);
+                if(backToMenu) goto label;
 
 			}
 		}
@@ -488,6 +509,7 @@ label:
 				playerMove = toupper(playerMove);
 				map.monsterMove();
 				Move(playerMove, map, playwin);
+                if(backToMenu) goto label;
 
 			}
 		}
@@ -526,10 +548,22 @@ label:
 				playerMove = toupper(playerMove);
 				map.monsterMove();
 				Move(playerMove, map, playwin);
+                if(backToMenu) goto label;
 
 			}
 		}
-	} else {
+	}
+	else if(highlight == 5){
+	 keyBeach = true;
+		keyRoad = true;
+		keyCity = true;
+		keyAirport = true;
+        mvwprintw(mainwin, 25, 90, "UNLOCKED ALL LEVELS");
+		wrefresh(mainwin);
+		getch();
+		goto label;
+	}
+	else {
 		mvwprintw(mainwin, 25, 90, "LEVEL NOT UNLOCKED!");
 		wrefresh(mainwin);
 		getch();
