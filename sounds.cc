@@ -8,10 +8,6 @@
 using namespace std;
 using namespace bridges;
 
-
-AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDuration, int duration);
-AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2);
-
 AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDuration, int duration) {
   if (ac1.getSampleRate() != ac2.getSampleRate()) {
     throw "make sure all audio is 44100khz, that's standard CD quality";
@@ -58,6 +54,15 @@ AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDurat
     return acMix;
 }
 
+AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2) {
+    // If no duration is given then just use the minimum song duration
+    int duration = min(ac1.getSampleCount() / ac1.getSampleRate(), ac2.getSampleCount()  / ac2.getSampleRate());
+
+    // If no fade duration is given then use half the total duration
+    int fadeDuration = duration / 2;
+    
+    return mixFadeClips(ac1, ac2, fadeDuration, duration);
+}
 
 int main() {
     Bridges bridges = Bridges(5, "bellucci_0914945", "1248908572516");
@@ -82,6 +87,14 @@ int main() {
     // Visualize the final mixed audio
     bridges.setDataStructure(finalMix);
     bridges.visualize();
+
+
+
+
+
+
+
+
 
 
     // Apply fade mixing to the two AudioClips and visualize
