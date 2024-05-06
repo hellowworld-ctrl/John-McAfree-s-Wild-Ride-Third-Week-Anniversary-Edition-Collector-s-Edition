@@ -246,6 +246,7 @@ public:
 			attron(COLOR_PAIR(1));
 			move(22, 75);
 			printw("CORRECT! YOU WIN A PRIZE!");
+			getch();
 			return true;
 			attroff(COLOR_PAIR(1));
 		}
@@ -253,6 +254,7 @@ public:
 			attron(COLOR_PAIR(2));
 			move(22, 75);
 			printw("INCORRECT! REFRESH ON YOUR (John McAfee) KNOWLEDGE!");
+			getch();
 			return false;
 			attroff(COLOR_PAIR(2));
 		}
@@ -347,8 +349,13 @@ public:
 						}
 					}
 					else if (randomNum == 2) {
-						//map.at(i).at(j) = VIRUS; //BROKEN!
-						//map.at(i).at(j) = OPEN; 
+						if (map.at(i+1).at(j) == WALL) {
+							map.at(i).at(j) = VIRUS;
+						} else {
+						map.at(i+1).at(j) = VIRUS; //BROKEN!
+						map.at(i).at(j) = OPEN; 
+						break;
+						}
 					}
 					else if (randomNum == 3) {
 						if (map.at(i).at(j-1) == WALL) {
@@ -359,8 +366,13 @@ public:
 						}
 					}
 					else if (randomNum == 4) {
-						//map.at(i).at(j) = VIRUS;//BROKEN! 
-						//map.at(i).at(j) = OPEN; 
+						if (map.at(i).at(j+1) == WALL) {
+							map.at(i).at(j) = VIRUS;
+						} else {
+						map.at(i).at(j+1) = VIRUS;//BROKEN! 
+						map.at(i).at(j) = OPEN; 
+						break;
+						}
 					}
 				}
 			}

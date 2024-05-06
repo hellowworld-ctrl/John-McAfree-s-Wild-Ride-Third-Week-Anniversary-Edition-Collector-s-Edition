@@ -164,6 +164,7 @@ public:
 			attron(COLOR_PAIR(1));
 			move(22, 75);
 			printw("CORRECT! YOU WIN!");
+			getch();
 			return true;
 			attroff(COLOR_PAIR(1));
 		}
@@ -171,6 +172,7 @@ public:
 			attron(COLOR_PAIR(2));
 			move(22, 75);
 			printw("INCORRECT! YOU SUCK!");
+			getch();
 			return false;
 			attroff(COLOR_PAIR(2));
 		}
@@ -303,8 +305,13 @@ public:
 						}
 					}
 					else if (randomNum == 2) {
-						//map.at(i).at(j) = VIRUS; //BROKEN!
-						//map.at(i).at(j) = OPEN; 
+						if (map.at(i+1).at(j) == WALL or map.at(i+1).at(j) == PLANE or map.at(i+1).at(j) == AIRPORT ) {
+							map.at(i).at(j) = VIRUS;
+						} else {
+						map.at(i+1).at(j) = VIRUS; //BROKEN!
+						map.at(i).at(j) = OPEN; 
+							break;
+					}
 					}
 					else if (randomNum == 3) {
 						if (map.at(i).at(j-1) == WALL or map.at(i).at(j-1) == PLANE or map.at(i).at(j-1) == AIRPORT) {
@@ -315,8 +322,13 @@ public:
 						}
 					}
 					else if (randomNum == 4) {
-						//map.at(i).at(j) = VIRUS;//BROKEN! 
-						//map.at(i).at(j) = OPEN; 
+						if (map.at(i).at(j+1) == WALL or map.at(i).at(j+1) == PLANE or map.at(i).at(j+1) == AIRPORT ) {
+							map.at(i).at(j) = VIRUS;
+						} else {
+						map.at(i).at(j+1) = VIRUS;//BROKEN! 
+						map.at(i).at(j) = OPEN; 
+							break;
+					}
 					}
 				}
 			}
