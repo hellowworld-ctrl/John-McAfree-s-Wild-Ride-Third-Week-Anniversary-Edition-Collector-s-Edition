@@ -256,6 +256,9 @@ int main() {
 
 	if (highlight == 0) {
 		MapHouse map;
+		map.lore();
+		clear();
+		refresh();
 	map.screen(50, 50);
 	while ((playerMove = wgetch(stdscr)) != 'q') {
 
