@@ -177,7 +177,32 @@ public:
 		clear();
 		refresh();
 	}
+	void lore() {
+		//int height = 0, width = 0;
+		int x = 0, y = 0, yMax = 0, xMax = 0;
+		// moves the cursor
+		move(0, 0);
+		getyx(stdscr, y, x);
+		getmaxyx(stdscr, yMax, xMax);
 
+		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
+
+		box(puzzwin, 0, 0);
+		refresh();
+		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
+
+		mvwprintw(puzzwin, 2, 3, "The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority.");
+		mvwprintw(puzzwin, 4, 4, "Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky.");
+		mvwprintw(puzzwin, 6, 5, "Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders.");
+		mvwprintw(puzzwin, 8, 6, "Snipers lurk in the distance. Things already seem to be bad. ");
+
+		wrefresh(puzzwin);
+
+
+		getch();
+		clear();
+		refresh();
+	}
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
 		int end_x = x + DISPLAY/2;

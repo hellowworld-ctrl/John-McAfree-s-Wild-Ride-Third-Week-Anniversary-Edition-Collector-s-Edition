@@ -163,7 +163,63 @@ public:
 		clear();
 		refresh();
 	}
+	void lore() {
+		//int height = 0, width = 0;
+		int x = 0, y = 0, yMax = 0, xMax = 0;
+		// moves the cursor
+		move(0, 0);
+		getyx(stdscr, y, x);
+		getmaxyx(stdscr, yMax, xMax);
 
+		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
+
+		box(puzzwin, 0, 0);
+		refresh();
+		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
+
+		mvwprintw(puzzwin, 2, 2, "*Upon leaving the house from the back*");
+
+		mvwprintw(puzzwin, 3, 2, "You finally leave.Take a look behind and see what you're gonna miss. ");
+		mvwprintw(puzzwin, 4, 2, "Your heart flutters a bit, and your chest tightens, like an anvil of sorrow compressing your solar plexus, getting heavier with every heave of your upper body. ");
+		mvwprintw(puzzwin, 5, 2, "A tear falls from one eye. You can't remember the last time you've done this. The saltiness of the tear upon your lip, crawling down to your tongue, is a radically foreign taste.");
+		mvwprintw(puzzwin, 6, 2, "Recognizing that your masculinity can't withstand the newness of longing, you visibly shake and shrug your whole body, expecting the emotion to soar off of you and fall between the paving stones.");
+		mvwprintw(puzzwin, 7, 2, "A whole cartography of pain you fail to confront maps little territories of guilt in your mind.This will never dissappear.");
+
+		mvwprintw(puzzwin, 9, 2, "'I'm gonna have to thug this one out, guys.' John says.");
+
+		mvwprintw(puzzwin, 11, 2, "'What?' the rest of the group asks in near - unison.");
+
+		mvwprintw(puzzwin, 13, 2, "'Hmm, nothing. Let's move on.' John says amid a sniff. ");
+
+		mvwprintw(puzzwin, 15, 2, "* the following dialogue is triggered if the group decides to not leave immediately, and visit the beach behind John's house.* ");
+
+		mvwprintw(puzzwin, 17, 2, "Beyond the poolside and obsessively groomed plant assortments in John's backyard is a small beach. It nicely delimits the borders of his property, something he contemplates in casual libertarian essence.");
+		mvwprintw(puzzwin, 18, 2, "It reminds him of the non-aggression principle, a sort of ethical axiom that declares property as divine permission to do anything with said property minus aggressive acts.");
+		mvwprintw(puzzwin, 19, 2, "That, in turn, reminded him of Ayn Rand - someone so systematically averse to anything good as to probably not enjoy a beach as quaint yet picturesque as McAfee's abode.");
+
+		mvwprintw(puzzwin, 21, 2, "'I don't visit this beach nearly as often as I should.' John comments, the Belizean heat glazing his elderly complexion. ");
+
+		mvwprintw(puzzwin, 23, 2, "'We're not gonna be visiting this place again, you dumbass.' the little militant says. ");
+
+		mvwprintw(puzzwin, 25, 2, "'What do you mean? I'm gonna be coming back here.' ");
+
+		mvwprintw(puzzwin, 27, 2, "'John, we're literally heading to the airport because you're being extradited to the U.S. This is only half the battle. If we get to Miami, there's not gonna be a safe haven.' ");
+
+		mvwprintw(puzzwin, 29, 2, "'I don't think you know how good I am at this.' John says. A solemn finality shows in his words. You can practically hear the pride come up to his larynx and vomit profusely on everyone else. ");
+
+		mvwprintw(puzzwin, 31, 2, "* upon going along the beach *");
+
+		mvwprintw(puzzwin, 33, 2, "You walk along the beach with your peers.You wish you could see your lover erotically douse herself in the tides");
+		mvwprintw(puzzwin, 34, 2, "Suddenly, memories of that exact thing flood your immediate vision, you can even feel the presence of your bodyguards standing like obelisks behind you - except their real presence feels much different.");
+		mvwprintw(puzzwin, 35, 2, "An inane frustration comes over you, as you realize you're feeling new emotions as a man in his seventies.  ");
+
+		wrefresh(puzzwin);
+
+
+		getch();
+		clear();
+		refresh();
+	}
 
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
