@@ -217,6 +217,12 @@ void Move(const int &ch, MapType&map, WINDOW *win) {
 
 	if (map.isEnemy(newX, newY) == true) {
 		puzz();
+	} else if (map.isChest(newX, newY) == true) {
+		mvprintw(0, 80, "OPENED CHEST BUT DOES NOTHING YET");
+		refresh();
+		getch();
+		clear();
+		refresh();
 	} else if (map.getPlayerLoc(newX, newY)) {
 		map.screen(newX, newY);
 		wmove(win, newY, newX);
