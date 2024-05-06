@@ -66,6 +66,10 @@ We are a group of college students who are undertaking an enormous technical tas
 
 5/4/24 - The UI has come together, and work on multiple levels has started. Music is coming along, with the script being refined to make it on par with "The Matrix" in terms of the deeper meaning it carries. Our team has become a steam engine going full speed in terms of productivity. This project is uniting into a completed game.
 
+5/5/24 - Each member of the team is doing the final sprint, ensuring we have each function working. Integration is going at full speed and this train is not stopping!!!
+
+5/6/24 - We are Gold!!!!!!!!!🏆
+
 
 
 
