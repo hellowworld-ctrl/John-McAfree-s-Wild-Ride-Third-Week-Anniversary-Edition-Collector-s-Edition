@@ -47,6 +47,7 @@ John McAfee: a senior-aged mastermind in the art of evasion. He now assumes the 
 John looks toward the oceanic horizon, a gorgeous view made meaningless by the numbing embrace of luxury. He adjusts his back, sprurring a loud rupture down his entire spine. You would think his accomplicies would be concerned, but they all look at the sliding glass door. 
 
 *gameplay continues* 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 *once player enters house* 
 
@@ -84,6 +85,8 @@ A California king sized mattress lies threadbare, stained with a hierarchical mu
 
 *Upon leaving the house from the back* 
 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 You finally leave. Take a look behind and see what you're gonna miss. Your heart flutters a bit, and your chest tightens, like an anvil of sorrow compressing your solar plexus, getting heavier with every heave of your upper body. A tear falls from one eye. You can't remember the last time you've done this. The saltiness of the tear upon your lip, crawling down to your tongue, is a radically foreign taste. Recognizing that your masculinity can't withstand the newness of longing, you visibly shake and shrug your whole body, expecting the emotion to soar off of you and fall between the paving stones. A whole cartography of pain you fail to confront maps little territories of guilt in your mind. This will never dissappear. 
 
 "I'm gonna have to thug this one out, guys." John says.
@@ -110,17 +113,25 @@ Beyond the poolside and obsessively groomed plant assortments in John's backyard
 
 You walk along the beach with your peers. You wish you could see your lover erotically douse herself in the tides. Suddenly, memories of that exact thing flood your immediate vision, you can even feel the presence of your bodyguards standing like obelisks behind you - except their real presence feels much different. An inane frustration comes over you, as you realize you're feeling new emotions as a man in his seventies.  
 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 *prompts upon level 1*
 
 The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority. Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky. Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders. Snipers lurk in the distance. Things already seem to be bad. 
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 *prompts upon level 2*
 
 After sweating off the trigger happy street-goers, you find your group in a more bourgeois, residential district near the beach. Each house exudes an almost unreachable luxury to them, with their elaborate gated entrances and driveways that fade into a horizon of angular windows and walls. You rub your eyes a bit. As the dots in your retinas dissolve, you see abstract blobs of black and purple along the perimeter of a couple properties. The vaguely yellow blurbs on their clothing appear bright as day: F.B.I. Every one of them is decked out with an armored combat jacket smattered with holsters, carrying all manner of hostile devices. Things are now worse. 
 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 *prompts upon Level 3*
 
 The airport looms mockingly in the distance. Your group collectively feels a cold breeze sift through their loose clothing, and graze their humid skin. The ocean is right next to you. A dozen wooden docks stretch out into the Caribbean Sea, each one sheltered by a thatched-roofed gazebo. Along the docks, an alarming arrangment of people stand adorned in camouflage and high-caliber rifles. They maneuver themselves with artifical precision, like a protocol for impending conquest. Like a neural network, they identify you in a discrete sequence - instructions unfolding for your group's termination. The odds are completely against you. 
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 *prompts upon level 4* 
 
