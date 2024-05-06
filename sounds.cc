@@ -8,6 +8,10 @@
 using namespace std;
 using namespace bridges;
 
+
+AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDuration, int duration);
+AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2);
+
 AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDuration, int duration) {
   if (ac1.getSampleRate() != ac2.getSampleRate()) {
     throw "make sure all audio is 44100khz, that's standard CD quality";
@@ -54,52 +58,32 @@ AudioClip mixFadeClips(const AudioClip& ac1, const AudioClip& ac2, int fadeDurat
     return acMix;
 }
 
-AudioClip mixFadeClips(AudioClip ac1, AudioClip ac2) {
-    // If no duration is given then just use the minimum song duration
-    int duration = min(ac1.getSampleCount() / ac1.getSampleRate(), ac2.getSampleCount()  / ac2.getSampleRate());
-
-    // If no fade duration is given then use half the total duration
-    int fadeDuration = duration / 2;
-    
-    return mixFadeClips(ac1, ac2, fadeDuration, duration);
-}
 
 int main() {
     Bridges bridges = Bridges(5, "bellucci_0914945", "1248908572516");
     bridges.setTitle("Audio Mixing");
     bridges.setDescription("Consolidating different tracks into one mix");
-
-    // Load the clips
-
+	
     AudioClip mainMenu = AudioClip("main_theme.wav");
-    bridges.setDataStructure(mainMenu);
+    AudioClip menu = AudioClip("menu.wav");
+    AudioClip theBeach = AudioClip("beach_theme.wav");
+    AudioClip background = AudioClip("background.wav");
+    AudioClip mcAfeeHouse = AudioClip("mcafee's_house(final).wav");
+    AudioClip combat = AudioClip("combat_theme_new.wav");
+    AudioClip theEnd = AudioClip("bitcrushmacro.wav");
+
+    AudioClip acFadeMix1 = mixFadeClips(mainMenu, menu);
+    AudioClip acFadeMix2 = mixFadeClips(acFadeMix1, theBeach);
+    AudioClip acFadeMix3 = mixFadeClips(acFadeMix2, background);
+    AudioClip acFadeMix4 = mixFadeClips(acFadeMix3, mcAfeeHouse);
+    AudioClip acFadeMix5 = mixFadeClips(acFadeMix4, combat);
+    AudioClip finalMix = mixFadeClips(acFadeMix5, theEnd);
+
+    // Visualize the final mixed audio
+    bridges.setDataStructure(finalMix);
     bridges.visualize();
 
-    AudioClip menu = AudioClip("menu.wav") 
-    bridges.setDataStructure(menu);
-    bridges.visualize();
 
-    AudioClip theBeach = AudioClip("beach_theme.wav") 
-    bridges.setDataStructure(theBeach);
-    bridges.visualize();
-
-    AudioClip background = AudioClip("background.wav") 
-    bridges.setDataStructure(background);
-    bridges.visualize();
-
-    AudioClip mcAfeeHouse = AudioClip("mcafee's_house(final).wav") 
-    bridges.setDataStructure(mcAfeeHouse);
-    bridges.visualize();
-
-    AudioClip combat = AudioClip("combat_theme_new.wav") 
-    bridges.setDataStructure(combat);
-    bridges.visualize();
-
-  
-    AudioClip theEnd = AudioClip("bitcrushmacro.wav") 
-    bridges.setDataStructure(theEnd);
-    bridges.visualize();
-        
     // Apply fade mixing to the two AudioClips and visualize
     //AudioClip acFadeMix = mixFadeClips(mainMenu, theBeach);
     //bridges.setDataStructure(acFadeMix);
