@@ -84,70 +84,8 @@ public:
 		*/
 
 	}
-	void lore() {
-		//int height = 0, width = 0;
-		int x = 0, y = 0, yMax = 0, xMax = 0;
-		// moves the cursor
-		move(0, 0);
-		getyx(stdscr, y, x);
-		getmaxyx(stdscr, yMax, xMax);
 
-		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
-
-		box(puzzwin, 0, 0);
-		refresh();
-		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
-
-		mvwprintw(puzzwin, 2, 2, "After sweating off the trigger happy street - goers, you find your group in a more bourgeois, residential district near the beach.");
-		mvwprintw(puzzwin, 3, 2, "Each house exudes an almost unreachable luxury to them, with their elaborate gated entrances and driveways that fade into a horizon of angular windows and walls.");
-		mvwprintw(puzzwin, 4, 2, "You rub your eyes a bit.As the dots in your retinas dissolve, you see abstract blobs of black and purple along the perimeter of a couple properties.");
-		mvwprintw(puzzwin, 5, 2, "The vaguely yellow blurbs on their clothing appear bright as day : F.B.I.Every one of them is decked out with an armored combat jacket smattered with holsters, carrying all manner of hostile devices.");
-		mvwprintw(puzzwin, 6, 2, "Things are now worse.");
-
-		mvwprintw(puzzwin, 8, 2, "The airport looms mockingly in the distance.Your group collectively feels a cold breeze sift through their loose clothing, and graze their humid skin.");
-		mvwprintw(puzzwin, 9, 2, "The ocean is right next to you.A dozen wooden docks stretch out into the Caribbean Sea, each one sheltered by a thatched - roofed gazebo.");
-		mvwprintw(puzzwin, 10, 2, "Along the docks, an alarming arrangment of people stand adorned in camouflage and high - caliber rifles.");
-		mvwprintw(puzzwin, 11, 2, "They maneuver themselves with artifical precision, like a protocol for impending conquest.");
-		mvwprintw(puzzwin, 12, 2, "Like a neural network, they identify you in a discrete sequence - instructions unfolding for your group's termination. ");
-		mvwprintw(puzzwin, 13, 2, "The odds are completely against you.");
-		mvwprintw(puzzwin, 14, 2, "The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority.");
-	
-		wrefresh(puzzwin);
-
-
-		getch();
-		clear();
-		refresh();
-	}
-
-	void lore() {
-		//int height = 0, width = 0;
-		int x = 0, y = 0, yMax = 0, xMax = 0;
-		// moves the cursor
-		move(0, 0);
-		getyx(stdscr, y, x);
-		getmaxyx(stdscr, yMax, xMax);
-
-		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
-
-		box(puzzwin, 0, 0);
-		refresh();
-		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
-
-		mvwprintw(puzzwin, 2, 3, "The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority.");
-		mvwprintw(puzzwin, 4, 4, "Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky.");
-		mvwprintw(puzzwin, 6, 5, "Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders.");
-		mvwprintw(puzzwin, 8, 6, "Snipers lurk in the distance. Things already seem to be bad. ");
-
-		wrefresh(puzzwin);
-
-
-		getch();
-		clear();
-		refresh();
-	}
-
-	void puzz() {
+	bool puzz() {
 		//int height = 0, width = 0;
 		int x = 30, y = 30, yMax = 50, xMax = 50;
 		// moves the cursor
@@ -211,12 +149,14 @@ public:
 			attron(COLOR_PAIR(1));
 			move(22, 75);
 			printw("CORRECT! YOU WIN A PRIZE!");
+			return true;
 			attroff(COLOR_PAIR(1));
 		}
 		else {
 			attron(COLOR_PAIR(2));
 			move(22, 75);
 			printw("INCORRECT! REFRESH ON YOUR (John McAfee) KNOWLEDGE!");
+			return false;
 			attroff(COLOR_PAIR(2));
 		}
 
@@ -294,6 +234,44 @@ public:
 	bool isEnemy(int &x,int &y) {
 		return map.at(y).at(x) == VIRUS;
 	}
+	void monsterMove() {
+		
+		int randomNum = ((rand() % 4) + 1);
+
+		for (size_t i = 0; i < SIZE; i++) {
+			for (size_t j = 0; j < SIZE; j++) {
+				if (i == 0 or j == 0 or i == SIZE-1 or j == SIZE-1)
+					map.at(i).at(j) = WALL;
+				else if (map.at(i).at(j) == VIRUS) {
+					if (randomNum == 1) {
+						if (map.at(i-1).at(j) == WALL) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i-1).at(j) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 2) {
+						//map.at(i).at(j) = VIRUS; //BROKEN!
+						//map.at(i).at(j) = OPEN; 
+					}
+					else if (randomNum == 3) {
+						if (map.at(i).at(j-1) == WALL) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i).at(j-1) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 4) {
+						//map.at(i).at(j) = VIRUS;//BROKEN! 
+						//map.at(i).at(j) = OPEN; 
+					}
+				}
+			}
+		}
+	}
+
 
 	MapCity() {
 		generateMap();

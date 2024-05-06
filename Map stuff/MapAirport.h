@@ -100,7 +100,7 @@ public:
 
 	}
 
-	void puzz() {
+	bool puzz() {
 		//int height = 0, width = 0;
 		int x = 30, y = 30, yMax = 50, xMax = 50;
 		// moves the cursor
@@ -160,53 +160,20 @@ public:
 		init_pair(1, COLOR_GREEN, COLOR_BLACK);
 		init_pair(2, COLOR_RED, COLOR_BLACK);
 
-		if (highlight == 2) {
+		if (highlight == 1) {
 			attron(COLOR_PAIR(1));
 			move(22, 75);
 			printw("CORRECT! YOU WIN!");
+			return true;
 			attroff(COLOR_PAIR(1));
 		}
 		else {
 			attron(COLOR_PAIR(2));
 			move(22, 75);
 			printw("INCORRECT! YOU SUCK!");
+			return false;
 			attroff(COLOR_PAIR(2));
 		}
-
-		getch();
-		clear();
-		refresh();
-	}	
-	
-	void lore() {
-		//int height = 0, width = 0;
-		int x = 0, y = 0, yMax = 0, xMax = 0;
-		// moves the cursor
-		move(0, 0);
-		getyx(stdscr, y, x);
-		getmaxyx(stdscr, yMax, xMax);
-
-		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
-
-		box(puzzwin, 0, 0);
-		refresh();
-		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
-
-		mvwprintw(puzzwin, 2, 2, "Delicate bodies of water meander around you.Your group traverses them without error.");
-		mvwprintw(puzzwin, 3, 2, "Everyone's knees edge on the precipice of falling down completely like they've traversed a marathon through concrete.Hope seems empty, and despair boils underneath the collective conscious of everyone - and yet you see a tower.");
-		mvwprintw(puzzwin, 4, 2, "It's made of concrete, a hexagonal mass complimenting the very top. It is a watchtower, one made to oversee travels in flight. You've made it to the airport in pieces.");
-		mvwprintw(puzzwin, 5, 2, "It's empty, unsettingly so. ");
-
-		mvwprintw(puzzwin, 7, 2, "You get to the runway as the aircrafts slowly taxi about in large discretions.");
-		mvwprintw(puzzwin, 8, 2, "A helicopter, as if to appear from the void above, comes into view and gently lands on a helipad.The helicopter looks innocuous at first : a sort of olive drab with accents of white.");
-		mvwprintw(puzzwin, 9, 2, "Your companions look closer.Plastered across the tail boom, it says, 'UNITED STATES OF AMERICA.' Several armored men exit the craft.They looked to be guarding someone, and they are.");
-		mvwprintw(puzzwin, 10, 2, "The people move around and everyone notices the figure.");
-			
-		mvwprintw(puzzwin, 12, 2, "It is former Secretary of State, Hilary Rodham Clinton.");
-
-		mvwprintw(puzzwin, 15, 5, "'Hello, John' she says, her face cut with the most insidiuous smirk.After sweating off the trigger happy street - goers, you find your group in a more bourgeois, residential district near the beach.");
-
-
 
 		getch();
 		clear();
@@ -283,6 +250,44 @@ public:
 	bool isEnemy(int &x,int &y) {
 		return map.at(y).at(x) == VIRUS;
 	}
+	void monsterMove() {
+		
+		int randomNum = ((rand() % 4) + 1);
+
+		for (size_t i = 0; i < SIZE; i++) {
+			for (size_t j = 0; j < SIZE; j++) {
+				if (i == 0 or j == 0 or i == SIZE-1 or j == SIZE-1)
+					map.at(i).at(j) = WALL;
+				else if (map.at(i).at(j) == VIRUS) {
+					if (randomNum == 1) {
+						if (map.at(i-1).at(j) == WALL or map.at(i-1).at(j) == PLANE or map.at(i-1).at(j) == AIRPORT) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i-1).at(j) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 2) {
+						//map.at(i).at(j) = VIRUS; //BROKEN!
+						//map.at(i).at(j) = OPEN; 
+					}
+					else if (randomNum == 3) {
+						if (map.at(i).at(j-1) == WALL or map.at(i).at(j-1) == PLANE or map.at(i).at(j-1) == AIRPORT) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i).at(j-1) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 4) {
+						//map.at(i).at(j) = VIRUS;//BROKEN! 
+						//map.at(i).at(j) = OPEN; 
+					}
+				}
+			}
+		}
+	}
+
 
 	MapAirport() {
 		generateMap();

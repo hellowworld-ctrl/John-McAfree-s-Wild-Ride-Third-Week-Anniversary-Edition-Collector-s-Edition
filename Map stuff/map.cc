@@ -45,13 +45,13 @@ void Menu() {
 			case 'w':
 				highlight--;
 				if (highlight == -1)
-					highlight = 0;
+				highlight = 0;
 			break;
 			case 's':
 				highlight++;
 				if (highlight == 3)
-					highlight = 2;
-				break;
+				highlight = 2;
+			break;
 			default:
 			break;
 		}
@@ -62,7 +62,7 @@ void Menu() {
 	}
 	if (highlight == 0) {
 		endwin();
-	clear();
+		clear();
 		int x = 0, y = 0;
 		getyx(stdscr, y, x);
 		map.screen(x, y);
@@ -70,7 +70,7 @@ void Menu() {
 	} else if (highlight == 1) {
 		//TODO Display inventory using a menu thingie 👌
 		highlight = 0;
-	clear();
+		clear();
 		for (int i = 0; i < inventory.size(); i++) {
 			if (i == highlight) wattron(menuwin, A_REVERSE);
 			wmove(menuwin, i + 1, 1);
@@ -133,12 +133,6 @@ void Move(const int &ch, MapType&map, WINDOW *win) {
 	int newX = x;
 	int newY = y;
 
-	int randomNum = ((rand() % 4) + 1);
-
-	if (randomNum == 1) {
-		
-	}
-
 	if (ch == 'W' || ch == KEY_UP) newY -= 1;
 	else if (ch == 'A' || ch == KEY_LEFT) newX -= 1;
 	else if (ch == 'S' || ch == KEY_DOWN) newY += 1;
@@ -148,8 +142,8 @@ void Move(const int &ch, MapType&map, WINDOW *win) {
 	} else if (map.isChest(newX, newY) == true) {
 		mvprintw(0, 80, "OPENED CHEST BUT DOES NOTHING YET");
 		refresh();
-		getch();
-		clear();
+	getch();
+	clear();
 		refresh();
 	} else if (map.getPlayerLoc(newX, newY)) {
 		map.screen(newX, newY);
@@ -171,6 +165,12 @@ int main() {
 	nonl();
 	cbreak();
 	noecho();
+	bool keyBeach = false;
+	bool keyRoad = false;
+	bool keyCity = false;
+	bool keyAirport = false;
+
+label:
 	/*
 	system("figlet FREEDOM FIGHTERS - John McAfree");
 	string startButton = read("Enter \'p\' to go into the world!\n");
@@ -184,7 +184,7 @@ int main() {
 	*/
 	int yMax = 24, xMax = 80;
 	// moves the cursor
-	
+
 	getmaxyx(stdscr, yMax, xMax);
 	WINDOW * mainwin = newwin(yMax/2, xMax/2, 1, 1);
 
@@ -235,12 +235,12 @@ int main() {
 			case 'w' :
 				highlight--;
 				if(highlight == -1)
-				highlight = 0;
+					highlight = 0;
 			break;
 			case 's' :
 				highlight++;
 				if(highlight == 5)
-				highlight = 4;
+					highlight = 4;
 			break;
 			default:
 			break;
@@ -254,159 +254,166 @@ int main() {
 	WINDOW * playwin = newwin(100, 100, 50, 50);
 	wmove(playwin, 50, 50);
 
+
 	if (highlight == 0) {
 		MapHouse map;
-		map.lore();
-		clear();
-		refresh();
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
+		map.screen(50, 50);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
-		cin >> playerMove;
+			cin >> playerMove;
 
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			map.puzz();
-		}
+			if (playerMove == KEY_F(1)) {
+				Menu();
+			} else if (playerMove == KEY_F(2)) {
+				if (map.puzz()) {
+					keyBeach = true;
+					clear();
+					refresh();
+					getch();
+					goto label;
+				}
+			}
 
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
 
-			else {
-			playerMove = toupper(playerMove);
-			map.monsterMove();
-			Move(playerMove, map, playwin);
+				else {
+				playerMove = toupper(playerMove);
+				map.monsterMove();
+				Move(playerMove, map, playwin);
 
+			}
 		}
 	}
-	}
-	else if (highlight == 1) {
+	else if (highlight == 1 and keyBeach == true) {
 		MapBeach map;
-		map.lore();
-		clear();
-		refresh();
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
+		map.screen(50, 50);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
-		cin >> playerMove;
+			cin >> playerMove;
 
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			map.puzz();
-		}
+			if (playerMove == KEY_F(1)) {
+				Menu();
+			} else if (playerMove == KEY_F(2)) {
+				if(map.puzz()) {
+					keyRoad = true;
+					clear();
+					refresh();
+					getch();
+					goto label;
+				}
+			}
 
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
 
-			else {
-			playerMove = toupper(playerMove);
-			Move(playerMove, map, playwin);
+				else {
+				playerMove = toupper(playerMove);
+				map.monsterMove();
+				Move(playerMove, map, playwin);
 
+			}
 		}
 	}
-		}
-	else if (highlight == 2) {
+	else if (highlight == 2 and keyRoad == true) {
 		MapRoad map;
-		map.lore();
-		clear();
-		refresh();
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
+		map.screen(50, 50);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
-		cin >> playerMove;
+			cin >> playerMove;
 
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			map.puzz();
-		}
+			if (playerMove == KEY_F(1)) {
+				Menu();
+			} else if (playerMove == KEY_F(2)) {
+				if(map.puzz()) {
+					keyCity = true;
+					clear();
+					refresh();
+					getch();
+					goto label;
+				}
+			}
 
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
 
-			else {
-			playerMove = toupper(playerMove);
-			Move(playerMove, map, playwin);
+				else {
+				playerMove = toupper(playerMove);
+				map.monsterMove();
+				Move(playerMove, map, playwin);
 
+			}
 		}
 	}
-	}
-	else if (highlight == 3) {
+	else if (highlight == 3 and keyCity == true) {
 		MapCity map;
-		map.lore();
-		clear();
-		refresh();
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
+		map.screen(50, 50);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
-		cin >> playerMove;
+			cin >> playerMove;
 
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			map.puzz();
-		}
+			if (playerMove == KEY_F(1)) {
+				Menu();
+			} else if (playerMove == KEY_F(2)) {
+				if(map.puzz()) {
+					keyAirport = true;
+					clear();
+					refresh();
+					getch();
+					goto label;
+				}
+			}
 
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
 
-			else {
-			playerMove = toupper(playerMove);
-			Move(playerMove, map, playwin);
+				else {
+				playerMove = toupper(playerMove);
+				map.monsterMove();
+				Move(playerMove, map, playwin);
 
+			}
 		}
 	}
-	}
-	else if (highlight == 4) {
+	else if (highlight == 4 and keyAirport == true) {
 		MapAirport map;
-		map.lore();
-		clear();
-		refresh();
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
+		map.screen(50, 50);
+		while ((playerMove = wgetch(stdscr)) != 'q') {
 
-		cin >> playerMove;
+			cin >> playerMove;
 
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			map.puzz();
+			if (playerMove == KEY_F(1)) {
+				Menu();
+			} else if (playerMove == KEY_F(2)) {
+				if (map.puzz()) {
+					clear();
+					refresh();
+					WINDOW * cong = newwin(100, 80, 0, 0);
+					box(cong, 0, 0);
+			wattron(cong, COLOR_PAIR(2));
+					mvwprintw(cong, 25, 25, "YOUR FREE TRIAL HAS ENDED:");
+					mvwprintw(cong, 28, 25, "https://www.mcafee.com/en-us/antivirus.html");
+			wattroff(cong, COLOR_PAIR(2));
+					wrefresh(cong);
+					getch();
+					break;
+				}
+			}
+
+			else if (playerMove == ERR) usleep(1'000'000 / FPS);
+
+				else {
+				playerMove = toupper(playerMove);
+				map.monsterMove();
+				Move(playerMove, map, playwin);
+
+			}
 		}
-
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
-
-			else {
-			playerMove = toupper(playerMove);
-			Move(playerMove, map, playwin);
-
-		}
+	} else {
+		mvwprintw(mainwin, 25, 90, "LEVEL NOT UNLOCKED!");
+		wrefresh(mainwin);
+		getch();
+		goto label;
 	}
-	}
 
-	/*
-	map.screen(50, 50);
-	while ((playerMove = wgetch(stdscr)) != 'q') {
-
-		cin >> playerMove;
-
-		if (playerMove == KEY_F(1)) {
-			Menu();
-		} else if (playerMove == KEY_F(2)) {
-			puzz();
-		}
-
-		else if (playerMove == ERR) usleep(1'000'000 / FPS);
-
-			else {
-			playerMove = toupper(playerMove);
-			Move(playerMove, map, playwin);
-
-		}
-	}
-	*/
-	
- //else usleep(500'00);
-
-attroff(COLOR_PAIR(1));
-clear();
-refresh();
-endwin();
+	attroff(COLOR_PAIR(1));
+	clear();
+	refresh();
+	endwin();
 }

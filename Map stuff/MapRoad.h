@@ -100,7 +100,7 @@ public:
 
 	}
 
-	void puzz() {
+	bool puzz() {
 		//int height = 0, width = 0;
 		int x = 30, y = 30, yMax = 50, xMax = 50;
 		// moves the cursor
@@ -164,12 +164,14 @@ public:
 			attron(COLOR_PAIR(1));
 			move(22, 75);
 			printw("CORRECT! YOU WIN A PRIZE!");
+			return true;
 			attroff(COLOR_PAIR(1));
 		}
 		else {
 			attron(COLOR_PAIR(2));
 			move(22, 75);
 			printw("INCORRECT! REFRESH ON YOUR (John McAfee) KNOWLEDGE!");
+			return false;
 			attroff(COLOR_PAIR(2));
 		}
 
@@ -177,32 +179,7 @@ public:
 		clear();
 		refresh();
 	}
-	void lore() {
-		//int height = 0, width = 0;
-		int x = 0, y = 0, yMax = 0, xMax = 0;
-		// moves the cursor
-		move(0, 0);
-		getyx(stdscr, y, x);
-		getmaxyx(stdscr, yMax, xMax);
 
-		WINDOW* puzzwin = newwin(yMax, xMax, y, x);
-
-		box(puzzwin, 0, 0);
-		refresh();
-		wborder(puzzwin, '{', '}', '~', '~', '%', '%', '%', '%');
-
-		mvwprintw(puzzwin, 2, 3, "The streets are nearly empty, littered only with the brave souls who've chosen to disobey your authority.");
-		mvwprintw(puzzwin, 4, 4, "Colonial houses arrange themselves parallel to each other, and telephone wires distort the sunny sky.");
-		mvwprintw(puzzwin, 6, 5, "Your prisoners now oppoonents stand outside their homes with weapons across their arms or on their shoulders.");
-		mvwprintw(puzzwin, 8, 6, "Snipers lurk in the distance. Things already seem to be bad. ");
-
-		wrefresh(puzzwin);
-
-
-		getch();
-		clear();
-		refresh();
-	}
 	void screen(int x, int y) {
 		int start_x = x - DISPLAY/2;
 		int end_x = x + DISPLAY/2;
@@ -272,6 +249,43 @@ public:
 		return map.at(y).at(x) == VIRUS;
 	}
 
+	void monsterMove() {
+		
+		int randomNum = ((rand() % 4) + 1);
+
+		for (size_t i = 0; i < SIZE; i++) {
+			for (size_t j = 0; j < SIZE; j++) {
+				if (i == 0 or j == 0 or i == SIZE-1 or j == SIZE-1)
+					map.at(i).at(j) = WALL;
+				else if (map.at(i).at(j) == VIRUS) {
+					if (randomNum == 1) {
+						if (map.at(i-1).at(j) == WALL or map.at(i-1).at(j) == GRASS) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i-1).at(j) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 2) {
+						//map.at(i).at(j) = VIRUS; //BROKEN!
+						//map.at(i).at(j) = OPEN; 
+					}
+					else if (randomNum == 3) {
+						if (map.at(i).at(j-1) == WALL or map.at(i).at(j-1) == GRASS) {
+							map.at(i).at(j) = VIRUS; 
+						} else {
+							map.at(i).at(j-1) = VIRUS; 
+							map.at(i).at(j) = OPEN;
+						}
+					}
+					else if (randomNum == 4) {
+						//map.at(i).at(j) = VIRUS;//BROKEN! 
+						//map.at(i).at(j) = OPEN; 
+					}
+				}
+			}
+		}
+	}
 	MapRoad() {
 		generateMap();
 	}
